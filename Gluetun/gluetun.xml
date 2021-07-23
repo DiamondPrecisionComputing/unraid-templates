@@ -7,11 +7,11 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files/<Support/>
   <Project>https://github.com/qdm12/gluetun</Project>
   <Overview>Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy</Overview>
   <Category>Security: Network:VPN</Category>
-  <WebUI/>
+  <WebUI>http://[IP]:[PORT:8000]<WebUI/>
   <TemplateURL/>
   <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
   <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
