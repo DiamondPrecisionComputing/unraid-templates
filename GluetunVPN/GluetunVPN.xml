@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>GluetunVPN</Name>
+  <Repository>qmcgaw/gluetun</Repository>
+  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files/<Support/>
+  <Project>https://github.com/qdm12/gluetun</Project>
+  <Overview>Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy</Overview>
+  <Category>Security: Network:VPN</Category>
+  <WebUI>http://[IP]:[PORT:8000]<WebUI/>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627061335</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8888</HostPort>
+        <ContainerPort>8888</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8388</HostPort>
+        <ContainerPort>8388</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8388</HostPort>
+        <ContainerPort>8388</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/gluetun</HostDir>
+      <ContainerDir>/gluetun</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+      <Variable>
+      <Value/>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>private internet access</Value>
+      <Name>VPNSP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>OPENVPN_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>OPENVPN_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+	<Variable>
+      <Value></Value>
+      <Name>VPN_SERVER_REGION</Name>
+      <Mode/>
+    </Variable>
+	<Variable>
+      <Value></Value>
+      <Name>VPN_SERVER_HOSTNAME</Name>
+      <Mode/>
+    </Variable>
+	<Variable>
+      <Value></Value>
+      <Name>VPN_SERVER_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>2.5</Value>
+      <Name>OPENVPN_VERSION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>udp</Value>
+      <Name>PROTOCOL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>OPENVPN_FLAGS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>on</Value>
+      <Name>DOT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>cloudflare</Value>
+      <Name>DOT_PROVIDERS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>SHADOWSOCKS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SHADOWSOCKS_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>chacha20-ietf-poly1305</Value>
+      <Name>SHADOWSOCKS_METHOD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>HTTPPROXY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>HTTPPROXY_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>HTTPPROXY_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>FIREWALL_INPUT_PORTS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>/gluetun/ip</Value>
+      <Name>PUBLICIP_FILE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8388</Value>
+      <Name>SHADOWSOCKS_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>HTTPPROXY_STEALTH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>SHADOWSOCKS_LOG</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8888</Value>
+      <Name>HTTPPROXY_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>HTTPPROXY_LOG</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>FIREWALL_DEBUG</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8000</Value>
+      <Name>HTTP_CONTROL_SERVER_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>on</Value>
+      <Name>HTTP_CONTROL_SERVER_LOG</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="HTTPPROXY_PORT" Target="8888" Default="" Mode="tcp" Description="Internal port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
+  <Config Name="SHADOWSOCKS_PORT_TCP" Target="8388" Default="" Mode="tcp" Description="Container Port: 8388" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
+  <Config Name="SHADOWSOCKS_PORT_UDP" Target="8388" Default="" Mode="tcp" Description="Container Port: 8388" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
+  <Config Name="HTTP_CONTROL_SERVER_PORT" Target="8000" Default="" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="VPN_SERVICE_PROVIDER" Target="VPNSP" Default="private internet access|cyberghost|fastestvpn|hidemyass|ivpn|mullvad|nordvpn|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
+  <Config Name="VPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="Container Variable: OPENVPN_USER" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="VPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="Container Variable: OPENVPN_PASSWORD" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="VPN_SERVER_REGION" Target="REGION" Default="" Mode="" Description="OPTIONAL: Comma separated list of regions. https://github.com/qdm12/gluetun/wiki/Servers-Readme" Display="always" Required="false" Mask="false"/>
+  <Config Name="VPN_SERVER_HOSTNAME" Target="SERVER_HOSTNAME" Default="" Mode="" Description="OPTIONAL: Comma separated list of server hostnames. https://github.com/qdm12/gluetun/wiki/Servers-Readme" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="VPN_SERVER_NAME" Target="SERVER_NAME" Default="" Mode="" Description="OPTIONAL: Comma separated list of server names. https://github.com/qdm12/gluetun/wiki/Servers-Readme" Display="always" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.5|2.4" Mode="" Description="Set the OpenVPN version to run" Type="Variable" Display="always" Required="false" Mask="false">2.5</Config>
+  <Config Name="OPENVPN_PROTOCOL" Target="PROTOCOL" Default="udp|tcp" Mode="" Description="Container Variable: PROTOCOL" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
+  <Config Name="OPENVPN_FLAGS" Target="OPENVPN_FLAGS" Default="" Mode="" Description="Space delimited openvpn flags to pass to openvpn" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="ENABLE_DNS" Target="DOT" Default="on|off" Mode="" Description="(Recommended: on) Activate DNS over TLS with Unbound" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
+  <Config Name="DNS_PROVIDER" Target="DOT_PROVIDERS" Default="cloudflare|google|quad9|quadrant|cleanbrowsing" Mode="" Description="Comma delimited list of DNS over TLS providers" Type="Variable" Display="always" Required="false" Mask="false">cloudflare</Config>
+  <Config Name="ENABLE_SHADOWSOCKS" Target="SHADOWSOCKS" Default="off|on" Mode="" Description="Enable the internal Shadowsocks proxy" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+  <Config Name="SHADOWSOCKS_PASSWORD" Target="SHADOWSOCKS_PASSWORD" Default="" Mode="" Description="Password to use to connect to Shadowsocks" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="SHADOWSOCKS_METHOD" Target="SHADOWSOCKS_METHOD" Default="chacha20-ietf-poly1305|aes-128-gcm|aes-256-gcm" Mode="" Description="Method to use for Shadowsocks" Type="Variable" Display="always" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
+  <Config Name="ENABLE_HTTPPROXY" Target="HTTPPROXY" Default="off|on" Mode="" Description="Enable the internal HTTP proxy" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+  <Config Name="HTTPPROXY_USER" Target="HTTPPROXY_USER" Default="" Mode="" Description="Username to use to connect to the HTTP proxy" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="HTTPPROXY_PASSWORD" Target="HTTPPROXY_PASSWORD" Default="" Mode="" Description="Password to use to connect to the HTTP proxy" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="ADDITIONAL_FIREWALL_INPUT_PORTS" Target="FIREWALL_INPUT_PORTS" Default="" Mode="" Description="Comma separated list of ports to allow through the default interface. This seems needed for Kubernetes sidecars." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="config" Target="/gluetun" Default="" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun</Config>
+  <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="/gluetun/ip" Mode="" Description="Filepath to store the public IP address assigned" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/gluetun/ip</Config>
+  <Config Name="SHADOWSOCKS_PORT" Target="SHADOWSOCKS_PORT" Default="" Mode="" Description="&#9;Internal port number for Shadowsocks to listen on" Type="Variable" Display="advanced-hide" Required="false" Mask="false">8388</Config>
+  <Config Name="ENABLE_HTTPPROXY_STEALTH" Target="HTTPPROXY_STEALTH" Default="off|on" Mode="" Description="Stealth mode means HTTP proxy headers are not added to your requests" Type="Variable" Display="advanced-hide" Required="false" Mask="false">off</Config>
+  <Config Name="SHADOWSOCKS_LOG" Target="SHADOWSOCKS_LOG" Default="off|on" Mode="" Description="Enable Shadowsocks logging" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="HTTPPROXY_PORT" Target="HTTPPROXY_PORT" Default="" Mode="" Description="Internal port number for the HTTP proxy to listen on" Type="Variable" Display="advanced" Required="false" Mask="false">8888</Config>
+  <Config Name="HTTPPROXY_LOG" Target="HTTPPROXY_LOG" Default="off|on" Mode="" Description="Logs every tunnel requests" Type="Variable" Display="advanced-hide" Required="false" Mask="false">off</Config>
+  <Config Name="FIREWALL_DEBUG" Target="FIREWALL_DEBUG" Default="off|on" Mode="" Description="Prints every firewall related command. You should use it for debugging purposes only." Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="HTTP_CONTROL_SERVER_PORT" Target="HTTP_CONTROL_SERVER_PORT" Default="" Mode="" Description="&#9;Listening port for the HTTP control server" Type="Variable" Display="advanced-hide" Required="false" Mask="false">8000</Config>
+  <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="Enable logging of HTTP requests" Type="Variable" Display="advanced-hide" Required="false" Mask="false">on</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">1000</Config>
+</Container>
