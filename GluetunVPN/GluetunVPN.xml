@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files/<Support/>
+  <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files/</Support>
   <Project>https://github.com/qdm12/gluetun</Project>
   <Overview>Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy</Overview>
   <Category>Security: Network:VPN</Category>
