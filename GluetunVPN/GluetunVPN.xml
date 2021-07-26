@@ -13,7 +13,7 @@
   <Category>Security: Network:VPN</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/GluetunVPN/GluetunVPN.xml</TemplateURL>
-  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <Icon>https://raw.githubusercontent.com/qdm12/gluetun/master/doc/logo.svg</Icon>
   <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
   <PostArgs/>
   <CPUset/>
