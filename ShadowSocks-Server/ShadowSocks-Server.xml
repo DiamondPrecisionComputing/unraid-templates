@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ShadowSocks-Server</Name>
+  <Repository>qmcgaw/ss-server</Repository>
+  <Registry>https://hub.docker.com/r/qmcgaw/ss-server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/qdm12/ss-server/issues/new</Support>
+  <Project>https://github.com/qdm12/ss-server</Project>
+  <Overview>Shadowsocks is a tunneling proxy developed to be free, open-source, and mainly used by Chinese people to bypass the Great Firewall restrictions. While using, it covers your browser traffic only, and it is almost impossible to detect and block it.&#xD;
+&#xD;
+The Docker image is:&#xD;
+&#xD;
+ --Based on Scratch (no OS) for a total size of 3.53MB&#xD;
+ --Compatible with all the CPU architectures supported by Docker: linux/amd64, linux/386, linux/arm64, linux/arm/v6, linux/arm/v7, linux/s390x, linux/ppc64le and linux/riscv64&#xD;
+ --Shadowsocks is implemented in Go and compiled statically using Go 1.16</Overview>
+  <Category>Security: Network:Proxy</Category>
+  <WebUI>https://github.com/qdm12/ss-server</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/qdm12/ss-server/master/title.svg</Icon>
+  <ExtraParams>--restart always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627452027</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Shadowsocks is a tunneling proxy developed to be free, open-source, and mainly used by Chinese people to bypass the Great Firewall restrictions. While using, it covers your browser traffic only, and it is almost impossible to detect and block it.&#xD;
+&#xD;
+The Docker image is:&#xD;
+&#xD;
+ --Based on Scratch (no OS) for a total size of 3.53MB&#xD;
+ --Compatible with all the CPU architectures supported by Docker: linux/amd64, linux/386, linux/arm64, linux/arm/v6, linux/arm/v7, linux/s390x, linux/ppc64le and linux/riscv64&#xD;
+ --Shadowsocks is implemented in Go and compiled statically using Go 1.16</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8388</HostPort>
+        <ContainerPort>8388</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8388</HostPort>
+        <ContainerPort>8388</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>chacha20-ietf-poly1305</Value>
+      <Name>CIPHER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>PROFILING</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="PORT_TCP" Target="8388" Default="8388" Mode="tcp" Description="Container Port: 8388" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
+  <Config Name="PORT_UDP" Target="8388" Default="8388" Mode="udp" Description="Container Port: 8388" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
+  <Config Name="PASSWORD" Target="PASSWORD" Default="" Mode="" Description="Password" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Timezone, i.e. America/Montreal" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="CIPHER" Target="CIPHER" Default="chacha20-ietf-poly1305|aes-128-gcm|aes-256-gcm" Mode="" Description="Encryption cipher to use" Type="Variable" Display="always" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
+  <Config Name="PROFILING" Target="PROFILING" Default="off|on" Mode="" Description="Enable the Go pprof http server on :6060&#13;&#10;** If enabled you must create a port variable to container port :6060" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+</Container>
