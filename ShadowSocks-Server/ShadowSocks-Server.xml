@@ -24,8 +24,8 @@ The Docker image is:&#xD;
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1627452027</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
+  <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
+  <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>>
   <Description>Shadowsocks is a tunneling proxy developed to be free, open-source, and mainly used by Chinese people to bypass the Great Firewall restrictions. While using, it covers your browser traffic only, and it is almost impossible to detect and block it.&#xD;
 &#xD;
 The Docker image is:&#xD;
