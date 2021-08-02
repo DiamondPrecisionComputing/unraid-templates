@@ -150,6 +150,11 @@
       <Mode />
     </Variable>
     <Variable>
+      <Value />
+      <Name>FIREWALL_OUTBOUND_SUBNETS</Name>
+      <Mode />
+    </Variable>
+    <Variable>
       <Value>/gluetun/ip</Value>
       <Name>PUBLICIP_FILE</Name>
       <Mode />
@@ -210,6 +215,7 @@
   <Config Name="SHADOWSOCKS_PORT_TCP" Target="8388" Default="" Mode="tcp" Description="Container Port: 8388" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
   <Config Name="SHADOWSOCKS_PORT_UDP" Target="8388" Default="" Mode="udp" Description="Container Port: 8388" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
   <Config Name="HTTP_CONTROL_SERVER_PORT" Target="8000" Default="" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
   <Config Name="VPN_SERVICE_PROVIDER" Target="VPNSP" Default="private internet access|cyberghost|fastestvpn|hidemyass|ivpn|mullvad|nordvpn|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|vpnunlimited|vyprvpn|windscribe" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
   <Config Name="VPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="Container Variable: OPENVPN_USER" Type="Variable" Display="always" Required="true" Mask="false" />
   <Config Name="VPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="Container Variable: OPENVPN_PASSWORD" Type="Variable" Display="always" Required="true" Mask="true" />
@@ -228,7 +234,7 @@
   <Config Name="HTTPPROXY_USER" Target="HTTPPROXY_USER" Default="" Mode="" Description="Username to use to connect to the HTTP proxy" Type="Variable" Display="always" Required="false" Mask="false" />
   <Config Name="HTTPPROXY_PASSWORD" Target="HTTPPROXY_PASSWORD" Default="" Mode="" Description="Password to use to connect to the HTTP proxy" Type="Variable" Display="always" Required="false" Mask="true" />
   <Config Name="ADDITIONAL_FIREWALL_INPUT_PORTS" Target="FIREWALL_INPUT_PORTS" Default="" Mode="" Description="Comma separated list of ports to allow through the default interface. This seems needed for Kubernetes sidecars." Type="Variable" Display="always" Required="false" Mask="false" />
-  <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
+  <Config Name="FIREWALL_OUTBOUND_SUBNETS" Target="FIREWALL_OUTBOUND_SUBNETS" Default="" Mode="" Description="You first need to set your LAN CIDR in FIREWALL_OUTBOUND_SUBNETS. For example with FIREWALL_OUTBOUND_SUBNETS=192.168.1.0/24" Type="Variable" Display="always" Required="false" Mask="false" />
   <Config Name="config" Target="/gluetun" Default="" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun</Config>
   <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="/gluetun/ip" Mode="" Description="Filepath to store the public IP address assigned" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/gluetun/ip</Config>
   <Config Name="SHADOWSOCKS_PORT" Target="SHADOWSOCKS_PORT" Default="" Mode="" Description="&#9;Internal port number for Shadowsocks to listen on" Type="Variable" Display="advanced-hide" Required="false" Mask="false">8388</Config>
