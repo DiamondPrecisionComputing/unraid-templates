@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>doc-ddns-updater</Name>
+  <Name>ddns-updater</Name>
   <Repository>qmcgaw/ddns-updater</Repository>
   <Registry>https://hub.docker.com/r/qmcgaw/ddns-updater/</Registry>
   <Network>bridge</Network>
@@ -53,7 +53,8 @@
 &amp;lt;p&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/p&amp;gt;</Overview>
   <Category>Tools: Network:DNS</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
-  <Icon>https://raw.githubusercontent.com/qdm12/ddns-updater/master/readme/ddnsgopher.svg</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/templates/ddns-updater.xml</TemplateURL>
+  <Icon>https://github.com/DiamondPrecisionComputing/unraid-templates/blob/main/templates/img/ddnsgopher.png?raw=true</Icon>
   <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
   <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
   <Description>&amp;lt;h1&amp;gt;Lightweight universal DDNS Updater with Docker and web UI&amp;lt;/h1&amp;gt;&#xD;
@@ -99,7 +100,6 @@
     &amp;lt;li style="box-sizing: border-box; margin-top: 0.25em;"&amp;gt;Compatible with &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;amd64&amp;lt;/code&amp;gt;, &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;386&amp;lt;/code&amp;gt;, &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;arm64&amp;lt;/code&amp;gt;, &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;armv7&amp;lt;/code&amp;gt;, &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;armv6&amp;lt;/code&amp;gt;, &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;s390x&amp;lt;/code&amp;gt;, &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;ppc64le&amp;lt;/code&amp;gt;, &amp;lt;code style='box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13.6px; background-color: var(--color-markdown-code-bg); border-radius: 6px; margin: 0px; padding: 0.2em 0.4em;'&amp;gt;riscv64&amp;lt;/code&amp;gt; CPU architectures.&amp;lt;/li&amp;gt;&#xD;
 &amp;lt;/ul&amp;gt;&#xD;
 &amp;lt;p&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/p&amp;gt;</Description>
-  <Labels/>
   <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="Config" Target="/updater/data" Default="/mnt/user/appdata/ddns-updater" Mode="rw" Description="Container Path: /updater/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ddns-updater</Config>
   <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Timezone to have accurate times, i.e. America/Montreal" Type="Variable" Display="always" Required="true" Mask="false"/>
