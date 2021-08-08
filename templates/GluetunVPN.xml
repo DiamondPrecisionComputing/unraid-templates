@@ -3,6 +3,7 @@
   <Name>GluetunVPN</Name>
   <Repository>qmcgaw/gluetun</Repository>
   <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+  <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files</Support>
   <Project>https://github.com/qdm12/gluetun</Project>
