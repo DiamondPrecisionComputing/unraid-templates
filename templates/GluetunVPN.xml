@@ -11,12 +11,13 @@
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/templates/GluetunVPN.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/qdm12/gluetun/master/doc/logo_256.png</Icon>
-  <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
+  <ExtraParams>--cap-add=NET_ADMIN --restart always</ExtraParams>
   <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
   <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
   <Description>Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy</Description>
   <Config Name="HTTPPROXY_PORT" Target="8888" Default="8888" Mode="tcp" Description="Internal port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
-  <Config Name="SHADOWSOCKS_ADDRESS" Target="SHADOWSOCKS_ADDRESS" Default="8388" Mode="" Description="Container Port: 8388" Type="Variable" Display="always" Required="true" Mask="false">8388</Config>
+  <Config Name="SHADOWSOCKS_PORT_TCP" Target="8388" Default="8388" Mode="tcp" Description="Internal TCPport number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
+  <Config Name="SHADOWSOCKS_PORT_UDP" Target="8388" Default="8388" Mode="udp" Description="Internal UDP port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
   <Config Name="HTTP_CONTROL_SERVER_PORT" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
   <Config Name="VPN_SERVICE_PROVIDER" Target="VPNSP" Default="private internet access|cyberghost|fastestvpn|hidemyass|ivpn|mullvad|nordvpn|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|vpn unlimited|vyprvpn|windscribe" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
