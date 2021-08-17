@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Genea</Name>
+  <Repository>biggiesize/genea-app</Repository>
+  <Registry>https://hub.docker.com/r/biggiesize/genea-app</Registry>
+  <Network>bridge</Network>
+  <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files/</Support>
+  <Project>https://github.com/genea-app/genea-app</Project>
+  <Overview>Genea allows visually building and editing a family tree online. It consumes and saves genealogy data in the GEDCOM format without any server side components.</Overview>
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:3181]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/templates/Genea.xml</TemplateURL>
+  <Icon>https://github.com/genea-app/genea-app/blob/main/img/unknown.png?raw=true</Icon>
+  <Config Name="WebUI" Target="3181" Default="3181" Mode="tcp" Description="Container Port: 3181" Type="Port" Display="always" Required="true" Mask="false">3181</Config>
+</Container>
