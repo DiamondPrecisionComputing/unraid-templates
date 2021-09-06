@@ -25,7 +25,7 @@
  &amp;lt;/p&amp;gt;&#xD;
  &amp;lt;p&amp;gt;&#xD;
     &amp;lt;strong&amp;gt;&#xD;
-    **Now Includes WireGuard support for Mullvad and WindScribe VPN Providers**&#xD;
+    **Now Includes WireGuard support for IVPN, Mullvad and WindScribe VPN Providers**&#xD;
     &amp;lt;/strong&amp;gt;&#xD;
  &amp;lt;/p&amp;gt;&#xD;
  &amp;lt;h2&amp;gt;&#xD;
@@ -399,7 +399,9 @@
   <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.5|2.4" Mode="" Description="Set the OpenVPN version to run" Type="Variable" Display="always" Required="false" Mask="false">2.5</Config>
   <Config Name="OPENVPN_PROTOCOL" Target="PROTOCOL" Default="udp|tcp" Mode="" Description="Container Variable: PROTOCOL" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
   <Config Name="OPENVPN_FLAGS" Target="OPENVPN_FLAGS" Default="" Mode="" Description="Space delimited openvpn flags to pass to openvpn" Type="Variable" Display="always" Required="false" Mask="false" />
+  <Config Name="WIREGUARD_PORT" Target="WIREGUARD_PORT" Default="51820" Mode="" Description="1 to 65535. Optional Wireguard custom server endpoint port" Type="Variable" Display="always" Required="false" Mask="false" />
   <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="32 bytes key in base64 format. Wireguard private key, only required if VPN_TYPE=wireguard. Note this is usually specific by user and the same for all servers." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="32 bytes key in base64 format. Optional Wireguard pre-shared key." Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="WIREGUARD_ADDRESS" Target="WIREGUARD_ADDRESS" Default="" Mode="" Description="IP network in the format xx.xx.xx.xx/xx. Wireguard interface address, only required if VPN_TYPE=wireguard. Note this is usually specific by user and the same for all servers." Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="ENABLE_DNS" Target="DOT" Default="on|off" Mode="" Description="(Recommended: on) Activate DNS over TLS with Unbound" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
   <Config Name="DNS_PROVIDER" Target="DOT_PROVIDERS" Default="cloudflare|google|quad9|quadrant|cleanbrowsing" Mode="" Description="Comma delimited list of DNS over TLS providers" Type="Variable" Display="always" Required="false" Mask="false">cloudflare</Config>
