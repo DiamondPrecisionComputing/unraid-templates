@@ -384,6 +384,30 @@
   <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
   <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
   <Description>Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy</Description>
+  <Date>2021-09-06</Date>
+  <Changes>
+###v3.23.0
+- Support for Wireguard (IVPN, Mullvad and Windscribe)
+- Change ownership of OpenVPN configuration file with PUID and PGID
+- OpenVPN custom config process user gets removed
+- OpenVPN custom config with custom network interface name set properly in firewall
+- Sorted IP addresses for servers.json
+- Only allow traffic through VPN interface when needed
+- HTTP control server /v1/openvpn route interacts with OpenVPN settings only (not provider settings)
+- Image size lowered to 31MB
+- Using Alpine 3.14
+- Wireguard support
+
+###v3.22.0
+- Allow multiple comma separated values for CYBERGHOST_GROUP
+- Update Cyberghost servers information
+- Change from SHADOWSOCKS_PORT to SHADOWSOCKS_LISTENING_ADDRESS
+- Windscribe: only use OpenVPN IP addresses, not Wireguard ones
+- Cyberghost: explicit-exit-notify used only for UDP, not TCP
+- Fix loop state change logic deadlock (preventing a 2nd restart for all run loops)
+- Use latest apk-tools to fix an Alpine vulnerability
+- Upgrade qdm12/ss-server to v0.3.0
+  </Changes>
   <Config Name="HTTPPROXY_PORT" Target="8888" Default="8888" Mode="tcp" Description="Internal port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
   <Config Name="SHADOWSOCKS_PORT_TCP" Target="8388" Default="8388" Mode="tcp" Description="Internal TCP port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
   <Config Name="SHADOWSOCKS_PORT_UDP" Target="8388" Default="8388" Mode="udp" Description="Internal UDP port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
