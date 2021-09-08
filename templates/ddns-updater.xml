@@ -65,6 +65,39 @@
   <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
   <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
   <Description>Lightweight universal DDNS Updater with Docker and web UI</Description>
+  <Date>2021-09-08</Date>
+  <Changes>
+###v2.4.0
+- Support for domaindiscount24.com
+- Support Shoutrrr addresses
+- PUBLICIP_DNS_TIMEOUT variable
+- Wildcard hosts
+- Healthcheck query to 127.0.0.1:port instead of for example 0.0.0.0:port
+- DATADIR defaults to /updater/data
+- Server listens on all interfaces (IPv4 and IPv6) instead of just 0.0.0.0
+- Context dependent DNS resolutions (to exit the program promptly)
+- Larger default timeout of 3s for DNS query of public IP
+- Upgrade golangci-lint to v1.41.1
+- Upgrade qmcgaw/xcputranslate to v0.6.0
+- Set Docker test stage entrypoint in Dockerfile instead of CI
+
+###v2.3.0
+- HTTP and DNS Public IP fetching options
+- Njalla support
+- SPDyn support
+- Variomedia support
+- Allow to run without settings
+- debug log level
+- HEALTH_SERVER_ADDRESS to change the internal health server listening address
+- Request URL and body debug logs for each provider
+- Read CONFIG environment variable with case sensitivity
+- Dreamhost: create record before removing outdated one
+- ipversion display
+- ROOT_URL behavior when served outside of root (bug introduced with go-chi)
+- IPV6_PREFIX support to avoid unneeded updates when using IPV6
+- Use embed for static UI
+- Upgrade linting setup with Golangci-lint to v1.40.1
+  </Changes>
   <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="Config" Target="/updater/data" Default="/mnt/user/appdata/ddns-updater" Mode="rw" Description="Container Path: /updater/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ddns-updater</Config>
   <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Timezone to have accurate times, i.e. America/Montreal" Type="Variable" Display="always" Required="true" Mask="false"/>
@@ -76,7 +109,7 @@
   <Config Name="PUBLICIP_DNS_TIMEOUT" Target="PUBLICIP_DNS_TIMEOUT" Default="3s" Mode="" Description="Public IP DNS query timeout (in seconds)" Type="Variable" Display="always" Required="false" Mask="false">3s</Config>
   <Config Name="UPDATE_COOLDOWN_PERIOD" Target="UPDATE_COOLDOWN_PERIOD" Default="5m" Mode="" Description="Duration to cooldown between updates for each record. This is useful to avoid being rate limited or banned. (in minutes)" Type="Variable" Display="always" Required="false" Mask="false">5m</Config>
   <Config Name="HTTP_TIMEOUT" Target="HTTP_TIMEOUT" Default="10s" Mode="" Description="Timeout for all HTTP requests (in seconds)" Type="Variable" Display="always" Required="false" Mask="false">10s</Config>
-  <Config Name="BACKUP_DIRECTORY" Target="BACKUP_DIRECTORY" Default="/updater/data/backup" Mode="" Description="Directory to read and write data files from internally" Type="Variable" Display="advanced" Required="false" Mask="false">/updater/data/backup</Config>
+  <Config Name="BACKUP_DIRECTORY" Target="/updater/data" Default="/mnt/user/appdata/ddns-updater/backup" Mode="rw" Description="Container Path: /updater/data" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/ddns-updater/backup</Config>
   <Config Name="BACKUP_PERIOD" Target="BACKUP_PERIOD" Default="0" Mode="" Description="Set to a period (i.e. 72h15m) to enable zip backups of data/config.json and data/updates.json in a zip file" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
   <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info|warning|error|debug" Mode="" Description="Level of logging, debug, info, warning or error" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
   <Config Name="LOG_CALLER" Target="LOG_CALLER" Default="hidden|short" Mode="" Description="Container Variable: LOG_CALLER" Type="Variable" Display="advanced" Required="false" Mask="false">hidden</Config>
