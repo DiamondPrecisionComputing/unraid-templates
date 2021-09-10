@@ -386,6 +386,36 @@
   <Description>Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN and Windscribe VPN servers using Go, OpenVPN, iptables, DNS over TLS, ShadowSocks and an HTTP proxy</Description>
   <Date>2021-09-06</Date>
   <Changes>
+###3.24.0
+    
+#### Features
+
+- IVPN
+  - Wireguard support (#584)
+  - TCP protocol support for OpenVPN
+  - Custom port support for OpenVPN
+  - Servers data update (#578)
+  - `ISP` filter (#578)
+- Mullvad
+  - `WIREGUARD_PORT` support
+- Surfshark
+  - Servers data improved (#575)
+- `LOG_LEVEL` variable (#577)
+- Add IP geolocation data to HTTP control server at `/v1/publicip/ip`
+- `OPENVPN_TARGET_IP` overrides IP for OpenVPN only
+- `WIREGUARD_ADDRESSES` accepts multiple comma separated IP networks
+
+#### Fixes
+
+- `FIREWALL_OUTBOUND_SUBNETS` IP rules
+- Wireguard
+  - `FIREWALL_VPN_INPUT_PORTS` support
+  - Fixed cleanup of wireguard link that was preventing restarts
+- Surfshark `REGION` retro-compatibility restored
+- `MULTIHOP_ONLY` defaults to `no`
+- Fix panic for certain 'no server found' errors
+- Clear IP data when VPN is stopped
+    
 ###v3.23.0
 - Support for Wireguard (IVPN, Mullvad and Windscribe)
 - Change ownership of OpenVPN configuration file with PUID and PGID
