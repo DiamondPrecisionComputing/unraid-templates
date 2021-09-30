@@ -529,6 +529,7 @@
    <Date>2021-09-28</Date>
    <Changes>
 ###3.25.0
+###Features
 - ExpressVPN Support (#623)
 - WeVPN Support (#591)
 - Healthcheck uses DNS and ping to github.com instead of only DNS to avoid relying on DNS cache
