@@ -275,7 +275,7 @@
 &amp;lt;/h1&amp;gt;&#xD;
 &amp;lt;p&amp;gt;&#xD;
    &amp;lt;em&amp;gt;&#xD;
-  Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN&#xD;
+  Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, ExpressVPN, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN, WeVPN, Windscribe&#xD;
   and Windscribe VPN servers using Go, OpenVPN or Wireguard, iptables, DNS over TLS, ShadowSocks and an HTTP proxy&#xD;
 &amp;lt;/em&amp;gt;&#xD;
 &amp;lt;/p&amp;gt;&#xD;
@@ -447,7 +447,7 @@
    &amp;lt;/li&amp;gt;&#xD;
    &amp;lt;li&amp;gt;&#xD;
       &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Supports: Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, Vyprvpn, Windscribe servers&amp;lt;/em&amp;gt;&#xD;
+         &amp;lt;em&amp;gt;Supports: Cyberghost, ExpressVPN, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, Vyprvpn, WeVPN, Windscribe servers&amp;lt;/em&amp;gt;&#xD;
       &amp;lt;/p&amp;gt;&#xD;
    &amp;lt;/li&amp;gt;&#xD;
    &amp;lt;li&amp;gt;&#xD;
@@ -526,8 +526,50 @@
       &amp;lt;/p&amp;gt;&#xD;
    &amp;lt;/li&amp;gt;&#xD;
 &amp;lt;/ul&amp;gt;</Description>
-   <Date>2021-09-17</Date>
+   <Date>2021-09-28</Date>
    <Changes>
+###3.25.0
+- ExpressVPN Support (#623)
+- WeVPN Support (#591)
+- Healthcheck uses DNS and ping to github.com instead of only DNS to avoid relying on DNS cache
+- HEALTH_ADDRESS_TO_PING variable
+- Adapt logger prefix to VPN used
+  - openvpn: for OpenVPN
+  - wireguard: for Wireguard
+- VPNSP value custom for OpenVPN custom config files (#621)
+- VPNSP value custom for Wireguard custom configuration
+  - WIREGUARD_PUBLIC_KEY variable
+  - WIREGUARD_ENDPOINT_IP variable
+- OpenVPN custom configuration file is reloaded on VPN restarts
+- OpenVPN custom configuration file is parsed at start to log out valid settings
+- Support IPv6 routing for Wireguard
+- Log Wireguard server endpoint
+- Log Wireguard keys when LOG_LEVEL=debug
+- Windscribe OpenVPN default cipher set to aes-256-gcm
+- Update server information built-in
+  - Cyberghost
+  - FastestVPN
+  - Mullvad
+- format-servers CLI command
+###Fixes
+- Set non block on TUN device
+- Close HTTP client connections when tunnel comes up
+- Public IP loop deadlock
+- OpenVPN VPNSP=custom does not deduplicate lines
+- PureVPN remove OpenVPN cipher option AES-256-CBC
+- Cyberghost OpenVPN cipher option defaults to aes-128-gcm
+- Repository servers.json path for maintainer server update cli
+- Add missing HTTP status code check for Windscribe API
+- PIA_ENCRYPTION default in Go program
+  - Defaults to strong instead of strong certificate string
+  - No impact on Docker images since variable is set to strong in Dockerfile
+  - Only read PIA_ENCRYPTION if service provider is PIA
+- (Security) Remove OpenVPN compression option (affects FastestVPN, Hide My Ass, IP Vanish, IVPN, NordVPN, PIA, PrivateVPN, ProtonVPN, Torguard, VPN Unlimited, VyprVPN)
+- FastestVPN updated OpenVPN configuration
+- HideMyAss: Cote d'Ivoire server country name
+- Log errors with error level for OpenVPN
+- PIA SERVER_NAME variable functionality
+
 ###3.24.0
 ###Features
 - IVPN
@@ -578,7 +620,7 @@
   </Changes>
    <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
    <Config Name="config" Target="/gluetun" Default="/mnt/user/appdata/gluetun" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun</Config>
-   <Config Name="VPN_SERVICE_PROVIDER" Target="VPNSP" Default="private internet access|cyberghost|fastestvpn|hidemyass|ivpn|mullvad|nordvpn|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|vpn unlimited|vyprvpn|wevpn|windscribe|custom" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
+   <Config Name="VPN_SERVICE_PROVIDER" Target="VPNSP" Default="private internet access|cyberghost|expressvpn|fastestvpn|hidemyass|ivpn|mullvad|nordvpn|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|vpn unlimited|vyprvpn|wevpn|windscribe|custom" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
    <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="VPN Type. Default is OpenVPN" Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
    <Config Name="OPENVPN_PROTOCOL" Target="OPENVPN_PROTOCOL" Default="udp|tcp" Mode="" Description="OPTIONAL: Container Variable: OPENVPN PROTOCOL" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
    <Config Name="OPENVPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="Container Variable: OPENVPN_USER" Type="Variable" Display="always" Required="true" Mask="false" />
