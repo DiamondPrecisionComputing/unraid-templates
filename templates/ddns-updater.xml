@@ -65,21 +65,27 @@
   <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
   <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
   <Description>Lightweight universal DDNS Updater with Docker and web UI</Description>
-  <Date>2021-09-08</Date>
+  <Date>2021-10-06</Date>
   <Changes>
+###v2.4.1
+###Fixes
+- Fix: SHOUTRRR_ADDRESSES case sensitivity
 ###v2.4.0
-- Support for domaindiscount24.com
+###Features
+- Support for domaindiscount24.com (#207)
 - Support Shoutrrr addresses
 - PUBLICIP_DNS_TIMEOUT variable
-- Wildcard hosts
+###Fixes
+- Wildcard hosts (#214)
+  - Keep multi-dots wildcard host structure in display strings
+  - Use a function BuildURLQueryHostname for API calls to send the correct wildcard hostname
+  - Send the wildcard character in API calls
+  - Fix behavior for wildcard hosts for: cloudflare, ddnss.de, digitalocean, dnsomatic, dreamhost, dyn, dynv6, google, informaniak, njalla, noip, opendns, ovh, selfhost.de, spdyn, strato and variomedia
 - Healthcheck query to 127.0.0.1:port instead of for example 0.0.0.0:port
 - DATADIR defaults to /updater/data
 - Server listens on all interfaces (IPv4 and IPv6) instead of just 0.0.0.0
 - Context dependent DNS resolutions (to exit the program promptly)
 - Larger default timeout of 3s for DNS query of public IP
-- Upgrade golangci-lint to v1.41.1
-- Upgrade qmcgaw/xcputranslate to v0.6.0
-- Set Docker test stage entrypoint in Dockerfile instead of CI
 
 ###v2.3.0
 - HTTP and DNS Public IP fetching options
