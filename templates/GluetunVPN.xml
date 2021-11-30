@@ -528,6 +528,31 @@
 &amp;lt;/ul&amp;gt;</Description>
    <Date>2021-09-28</Date>
    <Changes>
+###3.26.0
+###Features
+- Perfect privacy support (#606)
+- PrivateVPN
+  - OPENVPN_PORT support
+- Update server information
+  - Windscribe
+  - Torguard
+  - ProtonVPN
+  - NordVPN
+- Multiple OpenVPN ciphers for negotiation
+  - Cyberghost default cipher set to AES-256-GCM
+  - OPENVPN_CIPHER accept comma separated sipher values
+  - use ncp-ciphers for OpenVPN 2.4
+###Fixes
+- PrivateVPN: New OpenVPN configuration values
+- VyprVPN: Openvpn comp-lzo option
+- NordVPN: Openvpn comp-lzo option
+- Docker image: fix 2 low vulnerability busybox vulnerabilities
+- QNAP devices: openvpn at /usr/sbin/openvpn2.5 (see #157)
+- Updater: fix CLI error message
+- Version check: check Github http response status code
+- Public IP fetcher: remove opendns.com due to bad x509 cert
+- Storage: server data version diff when reading file
+
 ###3.25.0
 ###Features
 - ExpressVPN Support (#623)
