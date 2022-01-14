@@ -348,7 +348,7 @@
       &amp;lt;/li&amp;gt;&#xD;
       &amp;lt;li&amp;gt;&#xD;
          &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;SHADOWSOCKS_PORT_TCP and SHADOWSOCKS_PORT_UDP&amp;lt;/em&amp;gt;&#xD;
+            &amp;lt;em&amp;gt;SHADOWSOCKS_LISTENING_ADDRESS&amp;lt;/em&amp;gt;&#xD;
          &amp;lt;/p&amp;gt;&#xD;
          &amp;lt;ul&amp;gt;&#xD;
             &amp;lt;li&amp;gt;&#xD;
@@ -358,7 +358,7 @@
             &amp;lt;/li&amp;gt;&#xD;
             &amp;lt;li&amp;gt;&#xD;
                &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;The internal TCP and UDP listening port numbers for the ShadowSocks proxy&amp;lt;/em&amp;gt;&#xD;
+                  &amp;lt;em&amp;gt;The internal TCP and UDP listening port numbers for the ShadowSocks proxy (e.g. :8388)&amp;lt;/em&amp;gt;&#xD;
                &amp;lt;/p&amp;gt;&#xD;
             &amp;lt;/li&amp;gt;&#xD;
          &amp;lt;/ul&amp;gt;&#xD;
@@ -706,8 +706,7 @@
    <Config Name="ENABLE_HTTPPROXY_STEALTH" Target="HTTPPROXY_STEALTH" Default="off|on" Mode="" Description="OPTIONAL: Stealth mode means HTTP proxy headers are not added to your requests" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
    <Config Name="SHADOWSOCKS" Target="SHADOWSOCKS" Default="off|on" Mode="" Description="OPTIONAL: Enable the internal Shadowsocks proxy" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
    <Config Name="SHADOWSOCKS_LOG" Target="SHADOWSOCKS_LOG" Default="off|on" Mode="" Description="OPTIONAL: Enable Shadowsocks logging" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
-   <Config Name="SHADOWSOCKS_PORT_TCP" Target="8388" Default="8388" Mode="tcp" Description="OPTIONAL: Internal TCP port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
-   <Config Name="SHADOWSOCKS_PORT_UDP" Target="8388" Default="8388" Mode="udp" Description="OPTIONAL: Internal UDP port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">8388</Config>
+   <Config Name="SHADOWSOCKS_LISTENING_ADDRESS" Target=":8388" Default=":8388" Mode="tcp" Description="OPTIONAL: Port number for the HTTP proxy to listen on" Type="Port" Display="always" Required="true" Mask="false">:8388</Config>
    <Config Name="SHADOWSOCKS_PASSWORD" Target="SHADOWSOCKS_PASSWORD" Default="" Mode="" Description="OPTIONAL: Password to use to connect to Shadowsocks" Type="Variable" Display="always" Required="false" Mask="true" />
    <Config Name="SHADOWSOCKS_CIPHER" Target="SHADOWSOCKS_CIPHER" Default="chacha20-ietf-poly1305|aes-128-gcm|aes-256-gcm" Mode="" Description="OPTIONAL: Cipher to use for Shadowsocks" Type="Variable" Display="always" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
    <Config Name="UPDATER_PERIOD" Target="UPDATER_PERIOD" Default="0" Mode="" Description="OPTIONAL: Period to update all VPN servers information in memory and to /gluetun/servers.json. Set to 0 to disable. This does a burst of DNS over TLS requests, which may be blocked if you set BLOCK_MALICIOUS=on for example. Valid duration string such as 24h." Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
