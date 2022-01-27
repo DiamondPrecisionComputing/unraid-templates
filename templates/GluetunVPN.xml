@@ -528,6 +528,19 @@
 &amp;lt;/ul&amp;gt;</Description>
    <Date>2021-09-28</Date>
    <Changes>
+###3.27.0
+###Features
+-Wireguard opportunistic kernelspace
+  -Auto detect if kernelspace implementation is available
+  -Fallback to Go userspace implementation if kernel is not available
+-Entrypoint name changed from entrypoint to gluetun-entrypoint
+-Privado: update servers data
+-ProtonVPN: update servers data
+-Docker image: upgrade Alpine to 3.15
+###Fixes
+-Hidemyass: REGION validation
+-Dockerfile: change SHADOWSOCKS_ADDRESS to SHADOWSOCKS_LISTENING_ADDRESS
+
 ###3.26.0
 ###Features
 - Perfect privacy support (#606)
