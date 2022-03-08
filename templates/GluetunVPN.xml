@@ -348,7 +348,7 @@
       &amp;lt;/li&amp;gt;&#xD;
       &amp;lt;li&amp;gt;&#xD;
          &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;SHADOWSOCKS_LISTENING_ADDRESS&amp;lt;/em&amp;gt;&#xD;
+            &amp;lt;em&amp;gt;SHADOWSOCKS_PORT&amp;lt;/em&amp;gt;&#xD;
          &amp;lt;/p&amp;gt;&#xD;
          &amp;lt;ul&amp;gt;&#xD;
             &amp;lt;li&amp;gt;&#xD;
@@ -528,20 +528,42 @@
 &amp;lt;/ul&amp;gt;</Description>
    <Date>2021-09-28</Date>
    <Changes>
+###3.28.0
+###Features
+- Updater: environment variable UPDATER_VPN_SERVICE_PROVIDERS
+  - Updater defaults to update the VPN provider in use if enabled
+- ExpressVPN: update built-in server data
+- OPENVPN_PROCESS_USER with retro-compatibility with OPENVPN_ROOT
+- Add pprof HTTP server on port :6060 (#807)
+###Fixes
+- Accept uppercase OPENVPN_PROTOCOL values
+- Cyberghost: log about compatibility mode if COUNTRY is left empty
+- Control server: allow to bind on a random port by using :0
+- Retro-compatible precedence order for environment variables with defaults set in Dockerfile
+  - BLOCK_NSA has precedence over BLOCK_SURVEILLANCE
+  - HEALTH_OPENVPN_DURATION_ADDITION has precedence over HEALTH_VPN_DURATION_ADDITION
+  - HEALTH_OPENVPN_DURATION_INITIAL has precendence over HEALTH_VPN_DURATION_INITIAL
+  - Chain of precedence: PROXY > TINYPROXY > HTTPPROXY
+  - Chain of precedence: PROXY_LOG_LEVEL > TINYPROXY_LOG > HTTPPROXY_LOG
+  - PROTOCOL has precendence over OPENVPN_PROTOCOL
+  - IP_STATUS_FILE has precendence over PUBLICIP_FILE
+  - SHADOWSOCKS_PORT has precedence over SHADOWSOCKS_LISTENING_ADDRESS
+  - SHADOWSOCKS_METHOD has precedence over SHADOWSOCKS_CIPHER
+
 ###3.27.0
 ###Features
--Wireguard opportunistic kernelspace
-  -Auto detect if kernelspace implementation is available
-  -Fallback to Go userspace implementation if kernel is not available
--Entrypoint name changed from entrypoint to gluetun-entrypoint
--Privado: update servers data
--ProtonVPN: update servers data
--Docker image: upgrade Alpine to 3.15
+- Wireguard opportunistic kernelspace
+  - Auto detect if kernelspace implementation is available
+  - Fallback to Go userspace implementation if kernel is not available
+- Entrypoint name changed from entrypoint to gluetun-entrypoint
+- Privado: update servers data
+- ProtonVPN: update servers data
+- Docker image: upgrade Alpine to 3.15
 ###Fixes
 -Hidemyass: REGION validation
 -Dockerfile: change SHADOWSOCKS_ADDRESS to SHADOWSOCKS_LISTENING_ADDRESS
 
-      ###3.26.0
+###3.26.0
 ###Features
 - Perfect privacy support (#606)
 - PrivateVPN
@@ -659,33 +681,31 @@
   </Changes>
    <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
    <Config Name="config" Target="/gluetun" Default="/mnt/user/appdata/gluetun" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun</Config>
-   <Config Name="VPN_SERVICE_PROVIDER" Target="VPNSP" Default="private internet access|cyberghost|expressvpn|fastestvpn|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|vpn unlimited|vyprvpn|wevpn|windscribe|custom" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
+   <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="private internet access|cyberghost|expressvpn|fastestvpn|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|vpn unlimited|vyprvpn|wevpn|windscribe|custom" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
    <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="VPN Type. Default is OpenVPN. Note not all providers support Wireguard." Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
+   <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="OPTIONAL: Specify a custom network interface name to use. (e.g. tun0 or wg0)" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
+   <Config Name="VPN_ENDPOINT_PORT" Target="VPN_ENDPOINT_PORT" Default="" Mode="" Description="OPTIONAL: Custom OpenVPN/Wireguard server endpoint port to use" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="VPN_ENDPOINT_IP" Target="VPN_ENDPOINT_IP" Default="" Mode="" Description="OPTIONAL: Specify a target VPN IP address to use" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="OPENVPN_PROTOCOL" Target="OPENVPN_PROTOCOL" Default="udp|tcp" Mode="" Description="OPTIONAL: Container Variable: OPENVPN_PROTOCOL" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
    <Config Name="OPENVPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="Container Variable: OPENVPN_USER" Type="Variable" Display="always" Required="true" Mask="false" />
    <Config Name="OPENVPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="Container Variable: OPENVPN_PASSWORD (Optional for Mullvad)" Type="Variable" Display="always" Required="true" Mask="true" />
    <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.5|2.4" Mode="" Description="OPTIONAL: Set the OpenVPN version to run" Type="Variable" Display="always" Required="false" Mask="false">2.5</Config>
    <Config Name="OPENVPN_VERBOSITY" Target="OPENVPN_VERBOSITY" Default="0|1|2|3|4|5|6" Mode="" Description="OPTIONAL: OpenVPN verbosity level" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
    <Config Name="OPENVPN_FLAGS" Target="OPENVPN_FLAGS" Default="" Mode="" Description="OPTIONAL: Space delimited OpenVPN flags to pass to openvpn" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="OPENVPN_CIPHER" Target="OPENVPN_CIPHER" Default="" Mode="" Description="OPTIONAL: Specify one or more custom ciphers to use" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="OPENVPN_CIPHERS" Target="OPENVPN_CIPHERS" Default="" Mode="" Description="OPTIONAL: Specify one or more custom ciphers to use" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="OPENVPN_AUTH" Target="OPENVPN_AUTH" Default="" Mode="" Description="OPTIONAL: Specify a custom auth algorithm to use. i.e. sha256" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="OPENVPN_ROOT" Target="OPENVPN_ROOT" Default="no|yes" Mode="" Description="OPTIONAL: Run OpenVPN as root" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
-   <Config Name="OPENVPN_TARGET_IP" Target="OPENVPN_TARGET_IP" Default="" Mode="" Description="OPTIONAL: Specify a target VPN IP address to use" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="OPENVPN_PROCESS_USER" Target="OPENVPN_PROCESS_USER" Default="no|yes" Mode="" Description="OPTIONAL: Run OpenVPN as root" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
    <Config Name="OPENVPN_IPV6" Target="OPENVPN_IPV6" Default="off|on" Mode="" Description="OPTIONAL: Enable tunneling of IPv6 (only for Mullvad)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
    <Config Name="OPENVPN_CUSTOM_CONFIG" Target="OPENVPN_CUSTOM_CONFIG" Default="" Mode="" Description="OPTIONAL: The path to your OpenVPN configuration file. This implies VPN_SERVICE_PROVIDER=custom" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="OPENVPN_INTERFACE" Target="OPENVPN_INTERFACE" Default="tun0" Mode="" Description="OPTIONAL: Specify a custom network interface name to use" Type="Variable" Display="always" Required="false" Mask="false">tun0</Config>
-   <Config Name="OPENVPN_PORT" Target="OPENVPN_PORT" Default="" Mode="" Description="OPTIONAL: Custom OpenVPN server endpoint port to use" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="OPTINAL: 32 bytes private key in base64 format" Type="Variable" Display="always" Required="false" Mask="false"></Config>
    <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="OPTINAL: 32 bytes pre-shared key in base64 format" Type="Variable" Display="always" Required="false" Mask="false"></Config>
    <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="Only for VPN_SERVICE_PROVIDER=custom and VPN_TYPE=wireguard: Wireguard server public key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-   <Config Name="WIREGUARD_ADDRESS" Target="WIREGUARD_ADDRESS" Default="" Mode="" Description="Wireguard IP network in the format xx.xx.xx.xx/xx. Wireguard interface address, only required if VPN_TYPE=wireguard. Note this is usually specific by user and the same for all servers." Type="Variable" Display="always" Required="false" Mask="false"></Config>
-   <Config Name="WIREGUARD_ENDPOINT_IP" Target="WIREGUARD_ENDPOINT_IP" Default="" Mode="" Description="Only for VPN_SERVICE_PROVIDER=custom and VPN_TYPE=wireguard: Wireguard server endpoint IP address" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-   <Config Name="WIREGUARD_ENDPOINT_PORT" Target="WIREGUARD_ENDPOINT_PORT" Default="51820" Mode="" Description="OPTIONAL (required for VPN_SERVICE_PROVIDER=custom): Wireguard custom server endpoint port to use" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="WIREGUARD_INTERFACE" Target="WIREGUARD_INTERFACE" Default="wg0" Mode="" Description="OPTIONAL: Specify a custom network interface name to use" Type="Variable" Display="always" Required="false" Mask="false">wg0</Config>
-   <Config Name="REGION" Target="REGION" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN regions. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="COUNTRY" Target="COUNTRY" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN countries. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="CITY" Target="CITY" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN cities. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="SERVER_HOSTNAME" Target="SERVER_HOSTNAME" Default="" Mode="" Description="OPTIONAL: Comma separated list of server hostnames. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="WIREGUARD_ADDRESSES" Target="WIREGUARD_ADDRESSES" Default="" Mode="" Description="Wireguard IP network in the format xx.xx.xx.xx/xx. Wireguard interface address, only required if VPN_TYPE=wireguard. Note this is usually specific by user and the same for all servers." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+   <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN regions. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN countries. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN cities. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPTIONAL: Single server hostname. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="OPTIONAL: Comma separated list of server hostnames. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="FIREWALL" Target="FIREWALL" Default="on|off" Mode="" Description="Turn on or off the container built-in firewall. You should turn off for debugging purposes only." Type="Variable" Display="always" Required="false" Mask="false">on</Config>
    <Config Name="FIREWALL_VPN_INPUT_PORTS" Target="FIREWALL_VPN_INPUT_PORTS" Default="" Mode="" Description="OPTIONAL: Comma separated list of ports to allow from the VPN server side (useful for vyprvpn port forwarding)" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="FIREWALL_INPUT_PORTS" Target="FIREWALL_INPUT_PORTS" Default="" Mode="" Description="OPTIONAL: Comma separated list of ports to allow through the default interface. This seems needed for Unraid containers and Kubernetes sidecars." Type="Variable" Display="always" Required="false" Mask="false" />
@@ -709,7 +729,7 @@
    <Config Name="BLOCK_ADS" Target="BLOCK_ADS" Default="on|off" Mode="" Description="OPTIONAL: Block ads hostnames and IPs with Unbound" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
    <Config Name="UNBLOCK" Target="UNBLOCK" Default="" Mode="" Description="OPTIONAL: Comma separated list of domain names to leave unblocked with Unbound. i.e. domain1.com,x.domain2.co.uk" Type="Variable" Display="always" Required="false" Mask="false"></Config>
    <Config Name="DNS_UPDATE_PERIOD" Target="DNS_UPDATE_PERIOD" Default="24h" Mode="" Description="OPTIONAL: Period to update block lists and cryptographic files and restart Unbound. Set to 0 to deactivate updates. i.e. 0, 30s, 5m, 24h" Type="Variable" Display="always" Required="false" Mask="false">24h</Config>
-   <Config Name="DNS_PLAINTEXT_ADDRESS" Target="DNS_PLAINTEXT_ADDRESS" Default="" Mode="" Description="OPTIONAL: IP address to use as DNS resolver if DOT is off" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+   <Config Name="DNS_ADDRESS" Target="DNS_ADDRESS" Default="" Mode="" Description="OPTIONAL: IP address to use as DNS resolver if DOT is off" Type="Variable" Display="always" Required="false" Mask="false"></Config>
    <Config Name="DNS_KEEP_NAMESERVER" Target="DNS_KEEP_NAMESERVER" Default="on|off" Mode="" Description="OPTIONAL: Keep the nameservers in /etc/resolv.conf untouched, but disabled DNS blocking features" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
    <Config Name="HTTPPROXY" Target="HTTPPROXY" Default="off|on" Mode="" Description="OPTIONAL: Enable the internal HTTP proxy" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
    <Config Name="HTTPPROXY_LOG" Target="HTTPPROXY_LOG" Default="off|on" Mode="" Description="OPTIONAL: Logs every tunnel requests" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
