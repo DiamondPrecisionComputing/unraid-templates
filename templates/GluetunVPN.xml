@@ -528,6 +528,43 @@
 &amp;lt;/ul&amp;gt;</Description>
    <Date>2021-09-28</Date>
    <Changes>
+###3.29.0
+###Features
+- Firewall
+  - Auto-detect iptables and iptables-nft for IPv4 and IPv6
+  - Improve error message when NET_ADMIN capability is missing
+  - Support all default routes instead of only the first one
+    - Accept output traffic from all default routes through VPN interface
+    - Accept output from all default routes to outbound subnets
+    - Accept all input traffic on ports for all default routes
+    - Add IP rules for all default routes
+  - Add IPv6 inbound routing
+- Provider Specific
+  - Servers update: Mullvad, Privado, PrivateVPN, ProtonVPN, PureVPN, NordVPN, Private Internet Access, Torguard, FastestVPN (thanks @mircoianese #923)
+  - NordVPN: remove OpenVPN compression
+  - Ivpn: allow no password for account IDs matching i-xxxx-xxxx-xxxx or ivpn-xxxx-xxxx-xxxx
+- Other
+  - Use https://github.com/qdm12/log for logging
+  - Log out OS signal name when shutting down
+  - Storage: omit empty fields in servers.json
+###Fixes
+- Health check
+  - HEALTH_TARGET_ADDRESS to replace HEALTH_ADDRESS_TO_PING
+  - Remove github.com/go-ping/ping dependency
+  - Dial TCP the target address, appending :443 if port is not set
+  - Target address defaults to cloudflare.com:443
+- OPENVPN_FLAGS working fixed
+- HEALTH_VPN_DURATION_ADDITION working fixed
+- Privado: fix OPENVPN_PORT usage, thanks @cacti-user
+- Firewall: only set routes for IPv4 default routes
+- Use openvpn 2.4.12-r0 in CI build for openvpn 2.4
+- Fix PureVPN zip file download link (#915 thanks @mircoianese)
+- Private Internet Access: hide escaped url query values (token etc.)
+- NordVPN: allow aes-256-gcm for Openvpn 2.4
+- Private Internet Access: fix certificate validation (use OS certificates instead of custom certificate)
+- Port forwarding: loop exit from vpn loop
+- PUID and PGID as 32 bit unsigned integers instead of 16 bit
+
 ###3.28.0
 ###Features
 - Updater: environment variable UPDATER_VPN_SERVICE_PROVIDERS
@@ -713,7 +750,7 @@
    <Config Name="FIREWALL_DEBUG" Target="FIREWALL_DEBUG" Default="off|on" Mode="" Description="OPTIONAL: Prints every firewall related command. You should use it for debugging purposes only." Type="Variable" Display="always" Required="false" Mask="false">off</Config>
    <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="OPTIONAL: Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
    <Config Name="HEALTH_SERVER_ADDRESS" Target="HEALTH_SERVER_ADDRESS" Default="127.0.0.1:9999" Mode="" Description="OPTIONAL: Internal Health Server Listening Addroess" Type="Variable" Display="advanced" Required="false" Mask="false">127.0.0.1:9999</Config>
-   <Config Name="HEALTH_ADDRESS_TO_PING" Target="HEALTH_ADDRESS_TO_PING" Default="github.com" Mode="" Description="OPTIONAL: Address used to check tunnel health" Type="Variable" Display="advanced" Required="false" Mask="false">github.com</Config>
+   <Config Name="HEALTH_TARGET_ADDRESS" Target="HEALTH_TARGET_ADDRESS" Default="github.com:443" Mode="" Description="OPTIONAL: Address used to check tunnel health" Type="Variable" Display="advanced" Required="false" Mask="false">github.com:443</Config>
    <Config Name="HEALTH_VPN_DURATION_INITIAL" Target="HEALTH_VPN_DURATION_INITIAL" Default="6s" Mode="" Description="OPTIONAL: Initial health check duration in seconds." Type="Variable" Display="advanced" Required="false" Mask="false">6s</Config>
    <Config Name="HEALTH_VPN_DURATION_ADDITION" Target="HEALTH_VPN_DURATION_ADDITION" Default="5s" Mode="" Description="OPTIONAL: Subsequent health check duration in seconds." Type="Variable" Display="advanced" Required="false" Mask="false">5s</Config>
    <Config Name="DOT" Target="DOT" Default="on|off" Mode="" Description="(Recommended: on) Activate DNS over TLS with Unbound" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
