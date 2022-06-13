@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>Genea</Name>
   <Repository>diamondprecisioncomputing/genea-app:latest</Repository>
-  <Registry>https://hub.docker.com/r/biggiesize/genea-app</Registry>
+  <Registry>https://hub.docker.com/r/diamondprecisioncomputing/genea-app</Registry>
   <Network>bridge</Network>
   <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files/</Support>
   <Project>https://github.com/genea-app/genea-app</Project>
