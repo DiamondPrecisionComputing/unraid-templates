@@ -528,6 +528,37 @@
 &amp;lt;/ul&amp;gt;</Description>
    <Date>2021-09-28</Date>
    <Changes>
+###3.30.0
+###Features
+- ExpressVPN: OpenVPN additional ciphers (#1047)
+- Storage
+  - add "keep" boolean field for servers to keep manually added servers
+  - log time difference as a friendly duration
+- Updater: configurable minimum ratio of servers found
+  - UPDATER_MIN_RATIO environment variable
+  - -minratio flag for CLI operation
+- Docker: upgrade Alpine from 3.15 to 3.16 (#1005)
+- Update servers data: Perfect privacy, Purevpn, Privatevpn, Private Internet Access, ProtonVPN, IPVanish, Surfshark
+- Environment variables: clean values by removing surrounding spaces and suffix new line characters
+- Wireguard: add debug logs for IPv6 detection which can be enabled with LOG_LEVEL=debug
+###Fixes
+- ExpressVPN: OpenVPN fragment option taken into account (#1047)
+- Private internet access
+  - load custom certificate to communicate with their API
+  - restrict custom port choice
+- ProtonVPN
+  - set free field for free servers, fixing FREE_ONLY behavior
+  - remove duplicate entry IPs
+  - restrict custom port choice
+- Wireguard: continue on ipv6 route add permission denial
+- VPN: do not close wait error channel on consumer side
+- Port forwarding: set file owned by the uid and gid set by PUID and PGID
+- Private Internet Access: remove duplicate log of port forwarding data expiration
+- Pprof settings: override method used correctly in global settings
+- Updater: Fix CLI operation not setting DNS server
+- IPVanish: remove duplicate server entries
+- Custom: validate custom OpenVPN file at settings validation
+
 ###3.29.0
 ###Features
 - Firewall
