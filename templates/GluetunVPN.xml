@@ -7,262 +7,156 @@
    <Privileged>false</Privileged>
    <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files</Support>
    <Project>https://github.com/qdm12/gluetun</Project>
-   <Overview>      &amp;lt;h1&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Gluetun VPN client&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/h1&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-  Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN&#xD;
-  and Windscribe VPN servers using Go, OpenVPN or Wireguard, iptables, DNS over TLS, ShadowSocks and an HTTP proxy&#xD;
-&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;ANNOUNCEMENT&amp;lt;/strong&amp;gt;&#xD;
-   : Wireguard is now supported for all providers supporting it!&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;h2&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Instructions:&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/h2&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Detailed Instructions can be found&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;in the link below. You should probably check the&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;&#xD;
-         &amp;lt;strong&amp;gt;MANY&amp;lt;/strong&amp;gt;&#xD;
-      &amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;environment variables available to adapt the container to your needs.&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;https://github.com/qdm12/gluetun/wiki&amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;&#x26A0;&#xFE0F; &#x26A0;&#xFE0F;&amp;amp;#xA0;&amp;lt;/strong&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;For&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;&#xD;
-         &amp;lt;strong&amp;gt;ALL&amp;lt;/strong&amp;gt;&#xD;
-      &amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-   &amp;amp;#xA0;&#xD;
-   &amp;lt;em&amp;gt;VPN providers, server location parameters are&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;&#xD;
-         &amp;lt;strong&amp;gt;ALL OPTIONAL&amp;lt;/strong&amp;gt;&#xD;
-      &amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;. By default a random server is selected&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;&#x26A0;&#xFE0F;&amp;amp;#xA0;&amp;lt;/strong&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;&#x26A0;&#xFE0F;&amp;lt;/strong&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Fill out the minimum recommended variables for Unraid&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-   &amp;lt;ul&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;HTTPPROXY_PORT&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Default: 8888&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;The internal listening port number for the HTTP proxy&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;SHADOWSOCKS_PORT_TCP and SHADOWSOCKS_PORT_UDP&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Default: 8388&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;The internal TCP and UDP listening port numbers for the ShadowSocks proxy&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;HTTP_CONTROL_SERVER_PORT&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Default: 8000&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;The internal listening port number for the HTTP Control Server&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;TIMEZONE&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;e.g. America/Montreal&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-               &amp;lt;ul&amp;gt;&#xD;
-                  &amp;lt;li&amp;gt;&#xD;
-                     &amp;lt;p&amp;gt;&#xD;
-                        &amp;lt;em&amp;gt;TZ Database&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-                        &amp;lt;em&amp;gt;list can be found here:&amp;lt;/em&amp;gt;&#xD;
-                     &amp;lt;/p&amp;gt;&#xD;
-                  &amp;lt;/li&amp;gt;&#xD;
-                  &amp;lt;li&amp;gt;&#xD;
-                     &amp;lt;p&amp;gt;&#xD;
-                        &amp;lt;em&amp;gt;https://en.wikipedia.org/wiki/List_of_tz_database_time_zones&amp;lt;/em&amp;gt;&#xD;
-                     &amp;lt;/p&amp;gt;&#xD;
-                  &amp;lt;/li&amp;gt;&#xD;
-               &amp;lt;/ul&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Used for correct log times else UTC times are used&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;VPN_USER&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Account username for VPN provider&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;VPN_PASSWORD&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Account password for VPN provider&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;h2&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Features:&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/h2&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Based on Alpine 3.13 for a small Docker image of 54MB&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Supports: Cyberghost, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, Vyprvpn, Windscribe servers&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Supports Openvpn only for now&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;DNS over TLS baked in with service provider(s) of your choice&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;DNS fine blocking of malicious/ads/surveillance hostnames and IP addresses, with live update every 24 hours&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Choose the vpn network protocol, udp or tcp&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Built in firewall kill switch to allow traffic only with needed the VPN servers and LAN devices&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Built in Shadowsocks proxy (protocol based on SOCKS5 with an encryption layer, tunnels TCP+UDP)&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Built in HTTP proxy (tunnels HTTP and HTTPS through TCP)&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Connect other containers to it&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Connect LAN devices to it&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Compatible with amd64, i686 (32 bit), ARM 64 bit, ARM 32 bit v6 and v7, and even ppc64le &#x1F386;&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;VPN server side port forwarding for Private Internet Access and Vyprvpn&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Possibility of split horizon DNS by selecting multiple DNS over TLS providers&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Subprograms all drop root privileges once launched&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Subprograms output streams are all merged together&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Can work as a Kubernetes sidecar container, thanks @rorph&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;</Overview>
+   <License>https://img.shields.io/github/license/qdm12/gluetun</License>
+   <Overview>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Gluetun VPN client.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="Gluetun_VPN_client_0"></a>Gluetun VPN client</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">Lightweight swiss-knife-like VPN client to multiple VPN service providers</p>
+<p class="has-line-data" data-line-start="4" data-line-end="5"><img src="https://raw.githubusercontent.com/qdm12/gluetun/master/title.svg" alt="Title image"></p>
+<p class="has-line-data" data-line-start="6" data-line-end="7"><a href="https://github.com/qdm12/gluetun/actions/workflows/ci.yml"><img src="https://github.com/qdm12/gluetun/actions/workflows/ci.yml/badge.svg" alt="Build status"></a></p>
+<p class="has-line-data" data-line-start="8" data-line-end="17"><img src="https://img.shields.io/github/release/qdm12/gluetun?label=Last%20release" alt="Last release"><br>
+<img src="https://img.shields.io/docker/v/qmcgaw/gluetun?sort=semver&amp;label=Last%20Docker%20tag" alt="Last Docker tag"><br>
+<img src="https://img.shields.io/github/release-date/qdm12/gluetun?label=Last%20release%20date" alt="GitHub last release date"><br>
+<img src="https://img.shields.io/github/commits-since/qdm12/gluetun/latest?sort=semver" alt="Commits since release"><br>
+<img src="https://img.shields.io/github/last-commit/qdm12/gluetun.svg" alt="GitHub last commit"><br>
+<img src="https://img.shields.io/github/commit-activity/y/qdm12/gluetun.svg" alt="GitHub commit activity"><br>
+<img src="https://img.shields.io/github/issues-pr-closed/qdm12/gluetun.svg" alt="GitHub closed PRs"><br>
+<img src="https://img.shields.io/github/issues/qdm12/gluetun.svg" alt="GitHub issues"><br>
+<img src="https://img.shields.io/github/issues-closed/qdm12/gluetun.svg" alt="GitHub closed issues"></p>
+<h2 class="code-line" data-line-start=18 data-line-end=19><a id="Quick_links_18"></a>Quick links</h2>
+<ul>
+<li class="has-line-data" data-line-start="20" data-line-end="27">Problem?
+<ul>
+<li class="has-line-data" data-line-start="21" data-line-end="23">Check the Wiki
+<ul>
+<li class="has-line-data" data-line-start="22" data-line-end="23"><https://github.com/qdm12/gluetun/wiki</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="23" data-line-end="25">Start a discussion
+<ul>
+<li class="has-line-data" data-line-start="24" data-line-end="25">https://github.com/qdm12/gluetun/discussions</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="25" data-line-end="27">Fix the Unraid template
+<ul>
+<li class="has-line-data" data-line-start="26" data-line-end="27">https://github.com/qdm12/gluetun/discussions/550</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="27" data-line-end="30">Suggestion?
+<ul>
+<li class="has-line-data" data-line-start="28" data-line-end="30">Create an issue
+<ul>
+<li class="has-line-data" data-line-start="29" data-line-end="30">https://github.com/qdm12/gluetun/issues/li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="30" data-line-end="36"><strong>Want to add a VPN provider?</strong>
+<ul>
+<li class="has-line-data" data-line-start="31" data-line-end="33">Check the Developement Page
+<ul>
+<li class="has-line-data" data-line-start="32" data-line-end="33">https://github.com/qdm12/gluetun/wiki/Development</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="33" data-line-end="36">Add a Provider
+<ul>
+<li class="has-line-data" data-line-start="34" data-line-end="36">https://github.com/qdm12/gluetun/wiki/Add-a-provider</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="code-line" data-line-start=36 data-line-end=37><a id="Features_36"></a>Features</h2>
+<ul>
+<li class="has-line-data" data-line-start="38" data-line-end="39">Based on Alpine 3.16 for a small Docker image of 29MB</li>
+<li class="has-line-data" data-line-start="39" data-line-end="40">Supports: <strong>Cyberghost</strong>, <strong>ExpressVPN</strong>, <strong>FastestVPN</strong>, <strong>HideMyAss</strong>, <strong>IPVanish</strong>, <strong>IVPN</strong>, <strong>Mullvad</strong>, <strong>NordVPN</strong>, <strong>Perfect Privacy</strong>, <strong>Privado</strong>, <strong>Private Internet Access</strong>, <strong>PrivateVPN</strong>, <strong>ProtonVPN</strong>, <strong>PureVPN</strong>, <strong>SlickVPN</strong>, <strong>Surfshark</strong>, <strong>TorGuard</strong>, <strong>VPNSecure.me</strong>, <strong>VPNUnlimited</strong>, <strong>Vyprvpn</strong>, <strong>WeVPN</strong>, <strong>Windscribe</strong> servers</li>
+<li class="has-line-data" data-line-start="40" data-line-end="41">Supports OpenVPN for all providers listed</li>
+<li class="has-line-data" data-line-start="41" data-line-end="49">Supports Wireguard both kernelspace and userspace
+<ul>
+<li class="has-line-data" data-line-start="42" data-line-end="43">For <strong>Mullvad</strong>, <strong>Ivpn</strong>, <strong>Surfshark</strong> and <strong>Windscribe</strong></li>
+<li class="has-line-data" data-line-start="43" data-line-end="45">For <strong>Torguard</strong>, <strong>VPN Unlimited</strong> and <strong>WeVPN</strong> using the custom provider
+<ul>
+<li class="has-line-data" data-line-start="44" data-line-end="45">https://github.com/qdm12/gluetun/wiki/Custom-provider</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="45" data-line-end="47">For custom Wireguard configurations using the custom provider
+<ul>
+<li class="has-line-data" data-line-start="46" data-line-end="47">https://github.com/qdm12/gluetun/wiki/Custom-provider</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="47" data-line-end="49">More in progress, see Issue #134
+<ul>
+<li class="has-line-data" data-line-start="48" data-line-end="49">https://github.com/qdm12/gluetun/issues/134</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="49" data-line-end="50">DNS over TLS baked in with service provider(s) of your choice</li>
+<li class="has-line-data" data-line-start="50" data-line-end="51">DNS fine blocking of malicious/ads/surveillance hostnames and IP addresses, with live update every 24 hours</li>
+<li class="has-line-data" data-line-start="51" data-line-end="52">Choose the vpn network protocol, <code>udp</code> or <code>tcp</code></li>
+<li class="has-line-data" data-line-start="52" data-line-end="53">Built in firewall kill switch to allow traffic only with needed the VPN servers and LAN devices</li>
+<li class="has-line-data" data-line-start="53" data-line-end="54">Built in Shadowsocks proxy (protocol based on SOCKS5 with an encryption layer, tunnels TCP+UDP)</li>
+<li class="has-line-data" data-line-start="54" data-line-end="55">Built in HTTP proxy (tunnels HTTP and HTTPS through TCP)</li>
+<li class="has-line-data" data-line-start="55" data-line-end="57">Connect other containers to it
+<ul>
+<li class="has-line-data" data-line-start="56" data-line-end="57">https://github.com/qdm12/gluetun/wiki/Connect-a-container-to-gluetun</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="57" data-line-end="59">Connect LAN devices to it
+<ul>
+<li class="has-line-data" data-line-start="58" data-line-end="59">https://github.com/qdm12/gluetun/wiki/Connect-a-LAN-device-to-gluetun</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="59" data-line-end="60">Compatible with amd64, i686 (32 bit), <strong>ARM</strong> 64 bit, ARM 32 bit v6 and v7, and even ppc64le 🎆</li>
+<li class="has-line-data" data-line-start="60" data-line-end="62">Custom VPN server side port forwarding for Private Internet Access
+<ul>
+<li class="has-line-data" data-line-start="61" data-line-end="62">https://github.com/qdm12/gluetun/wiki/Private-internet-access#vpn-server-port-forwarding</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="62" data-line-end="63">Possibility of split horizon DNS by selecting multiple DNS over TLS providers</li>
+<li class="has-line-data" data-line-start="63" data-line-end="64">Unbound subprogram drops root privileges once launched</li>
+<li class="has-line-data" data-line-start="64" data-line-end="66">Can work as a Kubernetes sidecar container, thanks @rorph</li>
+</ul>
+<h2 class="code-line" data-line-start=66 data-line-end=67><a id="Setup_66"></a>Setup</h2>
+<p class="has-line-data" data-line-start="68" data-line-end="69">🎉 There are now instructions specific to each VPN provider with examples to help you get started as quickly as possible!</p>
+<p class="has-line-data" data-line-start="70" data-line-end="72">Go to the Wiki!<br>
+https://github.com/qdm12/gluetun/wiki</p>
+<p class="has-line-data" data-line-start="73" data-line-end="75">🐛 Found a bug in the Wiki?!<br>
+https://github.com/qdm12/gluetun/issues/new?assignees=&amp;labels=📄+Wiki+issue&amp;template=wiki+issue.yml&amp;title=Wiki+issue%3A+</p>
+<p class="has-line-data" data-line-start="76" data-line-end="77">Here's a docker-compose.yml for the laziest:</p>
+<pre><code class="has-line-data" data-line-start="79" data-line-end="108" class="language-yml">version: &quot;3&quot;
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    # container_name: gluetun
+    # line above must be uncommented to allow external containers to connect. See https://github.com/qdm12/gluetun/wiki/Connect-a-container-to-gluetun#external-container-to-gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 8888:8888/tcp # HTTP proxy
+      - 8388:8388/tcp # Shadowsocks
+      - 8388:8388/udp # Shadowsocks
+    volumes:
+      - /yourpath:/gluetun
+    environment:
+      # See https://github.com/qdm12/gluetun/wiki
+      - VPN_SERVICE_PROVIDER=ivpn
+      - VPN_TYPE=openvpn
+      # OpenVPN:
+      - OPENVPN_USER=
+      - OPENVPN_PASSWORD=
+      # Wireguard:
+      # - WIREGUARD_PRIVATE_KEY=wOEI9rqqbDwnN8/Bpp22sVz48T71vJ4fYmFWujulwUU=
+      # - WIREGUARD_ADDRESSES=10.64.222.21/32
+      # Timezone for accurate log times
+      - TZ=
+</code></pre>
+</body></html>
+   </Overview>
    <Category>Security: Network:VPN</Category>
    <WebUI>http://[IP]:[PORT:8000]</WebUI>
    <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/templates/GluetunVPN.xml</TemplateURL>
@@ -270,264 +164,24 @@
    <ExtraParams>--cap-add=NET_ADMIN --restart always</ExtraParams>
    <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
    <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
-   <Description>      &amp;lt;h1&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Gluetun VPN client&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/h1&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-  Lightweight swiss-knife-like VPN client to tunnel to Cyberghost, ExpressVPN, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, PerfectPrivacy, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, VyprVPN, WeVPN, Windscribe&#xD;
-  and Windscribe VPN servers using Go, OpenVPN or Wireguard, iptables, DNS over TLS, ShadowSocks and an HTTP proxy&#xD;
-&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;ANNOUNCEMENT&amp;lt;/strong&amp;gt;&#xD;
-   : Wireguard is now supported for all providers supporting it!&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;h2&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Instructions:&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/h2&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Detailed Instructions can be found&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;in the link below. You should probably check the&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;&#xD;
-         &amp;lt;strong&amp;gt;MANY&amp;lt;/strong&amp;gt;&#xD;
-      &amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;environment variables available to adapt the container to your needs.&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;https://github.com/qdm12/gluetun/wiki&amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;&#x26A0;&#xFE0F; &#x26A0;&#xFE0F;&amp;amp;#xA0;&amp;lt;/strong&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;For&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;&#xD;
-         &amp;lt;strong&amp;gt;ALL&amp;lt;/strong&amp;gt;&#xD;
-      &amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-   &amp;amp;#xA0;&#xD;
-   &amp;lt;em&amp;gt;VPN providers, server location parameters are&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;&#xD;
-      &amp;lt;u&amp;gt;&#xD;
-         &amp;lt;strong&amp;gt;ALL OPTIONAL&amp;lt;/strong&amp;gt;&#xD;
-      &amp;lt;/u&amp;gt;&#xD;
-   &amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;. By default a random server is selected&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;&#x26A0;&#xFE0F;&amp;amp;#xA0;&amp;lt;/strong&amp;gt;&#xD;
-   &amp;lt;strong&amp;gt;&#x26A0;&#xFE0F;&amp;lt;/strong&amp;gt;&#xD;
-&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Fill out the minimum recommended variables for Unraid&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-   &amp;lt;ul&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;HTTPPROXY_PORT&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Default: 8888&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;The internal listening port number for the HTTP proxy&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;SHADOWSOCKS_PORT&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Default: 8388&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;The internal TCP and UDP listening port numbers for the ShadowSocks proxy (e.g. :8388)&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;HTTP_CONTROL_SERVER_PORT&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Default: 8000&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;The internal listening port number for the HTTP Control Server&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;TIMEZONE&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;e.g. America/Montreal&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-               &amp;lt;ul&amp;gt;&#xD;
-                  &amp;lt;li&amp;gt;&#xD;
-                     &amp;lt;p&amp;gt;&#xD;
-                        &amp;lt;em&amp;gt;TZ Database&amp;amp;#xA0;&amp;lt;/em&amp;gt;&#xD;
-                        &amp;lt;em&amp;gt;list can be found here:&amp;lt;/em&amp;gt;&#xD;
-                     &amp;lt;/p&amp;gt;&#xD;
-                  &amp;lt;/li&amp;gt;&#xD;
-                  &amp;lt;li&amp;gt;&#xD;
-                     &amp;lt;p&amp;gt;&#xD;
-                        &amp;lt;em&amp;gt;https://en.wikipedia.org/wiki/List_of_tz_database_time_zones&amp;lt;/em&amp;gt;&#xD;
-                     &amp;lt;/p&amp;gt;&#xD;
-                  &amp;lt;/li&amp;gt;&#xD;
-               &amp;lt;/ul&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Used for correct log times else UTC times are used&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;VPN_USER&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Account username for VPN provider&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-      &amp;lt;li&amp;gt;&#xD;
-         &amp;lt;p&amp;gt;&#xD;
-            &amp;lt;em&amp;gt;VPN_PASSWORD&amp;lt;/em&amp;gt;&#xD;
-         &amp;lt;/p&amp;gt;&#xD;
-         &amp;lt;ul&amp;gt;&#xD;
-            &amp;lt;li&amp;gt;&#xD;
-               &amp;lt;p&amp;gt;&#xD;
-                  &amp;lt;em&amp;gt;Account password for VPN provider&amp;lt;/em&amp;gt;&#xD;
-               &amp;lt;/p&amp;gt;&#xD;
-            &amp;lt;/li&amp;gt;&#xD;
-         &amp;lt;/ul&amp;gt;&#xD;
-      &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;h2&amp;gt;&#xD;
-   &amp;lt;em&amp;gt;Features:&amp;lt;/em&amp;gt;&#xD;
-&amp;lt;/h2&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Based on Alpine 3.13 for a small Docker image of 54MB&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Supports: Cyberghost, ExpressVPN, FastestVPN, HideMyAss, IPVanish, IVPN, Mullvad, NordVPN, PerfectPrivacy, Privado, Private Internet Access, PrivateVPN, ProtonVPN, PureVPN, Surfshark, TorGuard, VPNUnlimited, Vyprvpn, WeVPN, Windscribe servers&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Supports Openvpn only for now&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;DNS over TLS baked in with service provider(s) of your choice&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;DNS fine blocking of malicious/ads/surveillance hostnames and IP addresses, with live update every 24 hours&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Choose the vpn network protocol, udp or tcp&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Built in firewall kill switch to allow traffic only with needed the VPN servers and LAN devices&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Built in Shadowsocks proxy (protocol based on SOCKS5 with an encryption layer, tunnels TCP+UDP)&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Built in HTTP proxy (tunnels HTTP and HTTPS through TCP)&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Connect other containers to it&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Connect LAN devices to it&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Compatible with amd64, i686 (32 bit), ARM 64 bit, ARM 32 bit v6 and v7, and even ppc64le &#x1F386;&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;VPN server side port forwarding for Private Internet Access and Vyprvpn&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Possibility of split horizon DNS by selecting multiple DNS over TLS providers&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Subprograms all drop root privileges once launched&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Subprograms output streams are all merged together&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-   &amp;lt;li&amp;gt;&#xD;
-      &amp;lt;p&amp;gt;&#xD;
-         &amp;lt;em&amp;gt;Can work as a Kubernetes sidecar container, thanks @rorph&amp;lt;/em&amp;gt;&#xD;
-      &amp;lt;/p&amp;gt;&#xD;
-   &amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;</Description>
-   <Date>2021-09-28</Date>
+   <Date>2022-08-24</Date>
    <Changes>
+###3.31.0
+###Features
+- SlickVPN Support (#961)
+- VPNsecure.me support (#848)
+- Update servers data built-in for ExpressVPN, Surfshark
+- Control server: add /vpn route to replace /openvpn (in future v4.0.0)
+- Control server: patch VPN settings using HTTP PUT at /v1/vpn/settings (undocumented, experimental)
+###Fixes
+- Surfshark: remove no longer valid retro server data
+- Bump github.com/breml/rootcerts from 0.2.3 to 0.2.6 (#1033, #1058)
+
+###3.30.1
+###Fixes
+- OpenVPN certificate: read PEM encoded files and read base 64 encoded PEM inner value from environment variable (as documented in Wiki)
+- OpenVPN key: read PEM encoded files and read base 64 encoded PEM inner value from environment variable (as documented in Wiki)
+
 ###3.30.0
 ###Features
 - ExpressVPN: OpenVPN additional ciphers (#1047)
