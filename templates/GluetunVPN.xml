@@ -131,6 +131,10 @@
    <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
    <Date>2022-08-24</Date>
    <Changes>
+###3.31.1
+###FIXES
+- Fix vpnsecure.me operation by allowing empty OpenVPN username
+
 ###3.31.0
 ###Features
 - SlickVPN Support (#961)
