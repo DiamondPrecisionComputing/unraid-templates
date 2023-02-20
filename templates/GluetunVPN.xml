@@ -131,8 +131,34 @@
    <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
    <Date>2022-08-24</Date>
    <Changes>
+###3.32.0
+###Features
+- AirVPN support (#1145)
+- Surfshark Wireguard support (#587)
+- IPv6 connection and tunneling (#1114)
+- Auto detection of IPv6 support for OpenVPN and OPENVPN_IPV6 removed
+- Built-in servers updates: Cyberghost, FastestVPN, Ivpn, Mullvad, ProtonVPN, PureVPN and Windscribe
+- HTTP proxy: log credentials sent on mismatch
+###Fixes
+- Private Internet Access: get token for port forwarding (#1132)
+- FastestVPN: updater handles lowercase .ovpn filenames
+- Ivpn: update mechanism fixed for Wireguard servers
+- Cyberghost: remove outdated server groups 94-1 pemium udp usa, 95-1 premium udp asia, 93-1 pemium udp usa and 96-1 premium tcp asia
+- Exit with OS code 0 on successful shutdown
+- Public IP fetching
+  - handle HTTP status codes 403 as too many requests
+  - no retry when too many requests to ipinfo.io
+- OpenVPN: do not set tun-ipv6
+  - server should push tun-ipv6 if it is available
+  - Add ignore filter for tun-ipv6 if ipv6 is not supported on client
+- Updater: error when server has not the minimal information
+- Custom provider: OPENVPN_CUSTOM_CONFIG takes precedence only if VPN_SERVICE_PROVIDER is empty
+- Wireguard: ignore IPv6 addresses if IPv6 is disabled
+- Environment variables: trim space for wireguard addresses
+- OpenVPN: parse udp4, udp6, tcp4 or tcp6
+
 ###3.31.1
-###FIXES
+###Fixes
 - Fix vpnsecure.me operation by allowing empty OpenVPN username
 
 ###3.31.0
@@ -372,7 +398,7 @@
   </Changes>
    <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
    <Config Name="config" Target="/gluetun" Default="/mnt/user/appdata/gluetun" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun</Config>
-   <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="private internet access|cyberghost|expressvpn|fastestvpn|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|surfshark|torguard|vpn unlimited|vyprvpn|wevpn|windscribe|custom" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
+   <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="private internet access|airvpn|cyberghost|expressvpn|fastestvpn|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|wevpn|windscribe|custom" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
    <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="VPN Type. Default is OpenVPN. Note not all providers support Wireguard." Type="Variable" Display="always" Required="true" Mask="false">openvpn</Config>
    <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="tun0" Mode="" Description="OPTIONAL: Specify a custom network interface name to use. (e.g. tun0 or wg0)" Type="Variable" Display="always" Required="true" Mask="false">tun0</Config>
    <Config Name="VPN_ENDPOINT_PORT" Target="VPN_ENDPOINT_PORT" Default="" Mode="" Description="OPTIONAL: Custom OpenVPN/Wireguard server endpoint port to use" Type="Variable" Display="always" Required="false" Mask="false" />
@@ -395,7 +421,7 @@
    <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN regions. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN countries. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN cities. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-   <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPTIONAL: Single server hostname. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPTIONAL: (PIA ONLY) Single server hostname. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="OPTIONAL: Comma separated list of server hostnames. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
    <Config Name="FIREWALL" Target="FIREWALL" Default="on|off" Mode="" Description="Turn on or off the container built-in firewall. You should turn off for debugging purposes only." Type="Variable" Display="always" Required="false" Mask="false">on</Config>
    <Config Name="FIREWALL_VPN_INPUT_PORTS" Target="FIREWALL_VPN_INPUT_PORTS" Default="" Mode="" Description="OPTIONAL: Comma separated list of ports to allow from the VPN server side (useful for vyprvpn port forwarding)" Type="Variable" Display="always" Required="false" Mask="false" />
