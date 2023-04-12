@@ -131,6 +131,83 @@
    <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
    <Date>2022-08-24</Date>
    <Changes>
+###3.33.3
+###Features
+- WIREGUARD_IMPLEMENTATION variable which can be auto (default), userspace or kernelspace
+- gchr.io/qdm12/gluetun Docker image mirror
+- Alpine upgraded from 3.16 to 3.17
+- OpenVPN upgraded from 2.5.6 to 2.5.8 built with OpenSSL 3
+- OpenSSL 1.1.* installed separately to maintain OpenVPN 2.4 working
+- Logging:
+  - log FAQ Github Wiki URL when the VPN internally restarts
+  - Warn Openvpn 2.4 is to be removed in the next release
+  - Warn when using SlickVPN or VPN Unlimited due to their weak certificates
+  - Warn Hide My Ass is no longer supported (credits to @Fukitsu)
+  - OpenVPN RTNETLINK answers: File exists changed to warning level with explanation
+  - OpenVPN Linux route add command failed: changed to warning level with explanation
+  - Log IPv6 support at debug level with more information instead of at the info level
+- Update servers data: AirVPN, FastestVPN, Mullvad, Surfshark, Private Internet Access
+- Netlink: add debug logger (no use yet)
+- Surfshark: add 2 new 'HK' servers
+- Install Alpine wget package (fixes #1260, #1494 due to busybox's buggy wget)
+- OpenVPN: transparently upgrade key encryption for DES-CBC encrypted keys (VPN Secure)
+###Important Fixes
+- Exit with code 1 on a program error
+- Profiling server: do not run if disabled
+- IPv6 detection: inspect each route source and destination for buggy kernels/container runtimes
+- iptables detection: better interpret permission denied for buggy kernels/container runtimes
+- FastestVPN: update OpenVPN zip file URL for the updater (#1264)
+- IPVanish: update OpenVPN zip file URL for the updater (#1449)
+- Surfshark: remove 3 servers no longer resolving 
+- IPv6 detection: inspect each route source and destination for buggy kernels/container runtimes
+- AirVPN
+  - remove commas from API locations
+  - remove commas from city names- 
+- VPN Unlimited: lower TLS security level to 0 to allow weak certificates to work with Openvpn 2.5.8+Openssl 3
+- SlickVPN
+  - explicitely allow AES-256-GCM cipher
+  - lower TLS security level to 0 to allow SlickVPN's weak certificates to work with Openvpn 2.5.8+Openssl 3
+  - All servers support TCP and UDP
+  - Precise default TCP port as 443
+###Documentation
+- Document new docker image gchr.io/qdm12/gluetun
+- Add servers updater environment variables (#1393)
+- Update Github labels:
+  - remove issue category labels
+  - Add temporary status labels
+  - Add complexity labels
+###Minor Fixes
+- Firewall: remove previously allowed input ports
+- HTTP proxy: lower shutdown wait from 2s to 100ms
+- Private Internet Access: remove credentials from login error string
+- Wireguard:
+  - validate Wireguard addresses depending on IPv6 support
+  - ignore IPv6 interface addresses if IPv6 is not supported
+- Healthcheck client: set unset health settings to defaults
+- Print outbound subnets settings correctly
+- github.com/breml/rootcerts from 0.2.8 to 0.2.10
+- Add subprogram name in version check error
+###Maintenance
+- Development tooling:
+  - Go upgraded from 1.19 to 1.20
+  - Development container has the same ssh bind mount for all platforms
+  - Development container has openssl installed
+  - golangci-lint upgraded from v1.49.0 to v1.51.2
+  - github.com/stretchr/testify upgraded from 1.8.1 to 1.8.2
+- Dependencies
+  - golang.org/x/text upgraded from 0.4.0 to 0.8.0
+  - github.com/fatih/color upgraded from 1.13.0 to 1.14.1
+  - golang.org/x/sys upgraded from 0.3.0 to 0.6.0
+  - Remove no longer needed apk-tools
+- Code health
+  - Add comments for OpenVPN settings fields about their base64 DER encoding
+  - internal/openvpn/extract: simplify PEM extraction function
+  - Review all error wrappings
+    - remove repetitive cannot and failed prefixes
+    - rename unmarshaling to decoding
+- CI
+  - docker/build-push-action upgraded from 3.2.0 to 4.0.0
+
 ###3.32.0
 ###Features
 - AirVPN support (#1145)
@@ -414,6 +491,7 @@
    <Config Name="OPENVPN_PROCESS_USER" Target="OPENVPN_PROCESS_USER" Default="no|yes" Mode="" Description="OPTIONAL: Run OpenVPN as root" Type="Variable" Display="always" Required="false" Mask="false">no</Config>
    <Config Name="OPENVPN_IPV6" Target="OPENVPN_IPV6" Default="off|on" Mode="" Description="OPTIONAL: Enable tunneling of IPv6 (only for Mullvad)" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
    <Config Name="OPENVPN_CUSTOM_CONFIG" Target="OPENVPN_CUSTOM_CONFIG" Default="" Mode="" Description="OPTIONAL: The path to your OpenVPN configuration file. This implies VPN_SERVICE_PROVIDER=custom" Type="Variable" Display="always" Required="false" Mask="false" />
+   <Config Name="WIREGUARD_IMPLEMENTATION" Target="WIREGUARD_IMPLEMENTATION" Default="auto|userspace|kernelspace" Mode="" Description="Implementation of Wireguard to use." Type="Variable" Display="always" Required="false" Mask="false">auto</Config>
    <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="OPTINAL: 32 bytes private key in base64 format" Type="Variable" Display="always" Required="false" Mask="false"></Config>
    <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="OPTINAL: 32 bytes pre-shared key in base64 format" Type="Variable" Display="always" Required="false" Mask="false"></Config>
    <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="Only for VPN_SERVICE_PROVIDER=custom and VPN_TYPE=wireguard: Wireguard server public key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
