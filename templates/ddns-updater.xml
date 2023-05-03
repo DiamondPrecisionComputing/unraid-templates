@@ -61,7 +61,7 @@
   <Category>Tools: Network:DNS</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/templates/ddns-updater.xml</TemplateURL>
-  <Icon>https://github.com/DiamondPrecisionComputing/unraid-templates/blob/main/templates/img/ddnsgopher.png?raw=true</Icon>
+  <Icon>https://github.com/DiamondPrecisionComputing/unraid-templates/blob/master/templates/img/ddnsgopher.png?raw=true</Icon>
   <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
   <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
   <Description>Lightweight universal DDNS Updater with Docker and web UI</Description>
