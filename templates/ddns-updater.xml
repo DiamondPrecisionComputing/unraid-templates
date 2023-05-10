@@ -60,8 +60,8 @@
     &amp;lt;p style="outline: 0px; text-align: justify; margin: 0px 0px 4px;"&amp;gt;&amp;lt;br style="outline: 0px; color: rgb(221, 221, 221); font-family: clear-sans; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(0, 0, 0, 0.25); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"&amp;gt;&amp;lt;/p&amp;gt;</Overview>
   <Category>Tools: Network:DNS</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/templates/ddns-updater.xml</TemplateURL>
-  <Icon>https://github.com/DiamondPrecisionComputing/unraid-templates/blob/master/templates/img/ddnsgopher.png?raw=true</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/master/templates/ddns-updater.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/master/templates/img/ddnsgopher.png</Icon>
   <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
   <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
   <Description>Lightweight universal DDNS Updater with Docker and web UI</Description>
