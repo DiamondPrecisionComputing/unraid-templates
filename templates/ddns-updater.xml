@@ -104,7 +104,7 @@
 - Use embed for static UI
 - Upgrade linting setup with Golangci-lint to v1.40.1
   </Changes>
-  <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="WebUI" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false"/>
   <Config Name="Config" Target="/updater/data" Default="/mnt/user/appdata/ddns-updater" Mode="rw" Description="Container Path: /updater/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ddns-updater</Config>
   <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Timezone to have accurate times, i.e. America/Montreal" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="PUBLICIP_FETCHERS" Target="PUBLICIP_FETCHERS" Default="all|http|dns" Mode="" Description="Comma separated fetcher types to obtain the public IP address from http and dns" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
