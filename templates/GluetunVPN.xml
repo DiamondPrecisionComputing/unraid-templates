@@ -129,8 +129,49 @@
    <ExtraParams>--cap-add=NET_ADMIN --restart always</ExtraParams>
    <DonateText>This app and docker were generously made by qmcgaw. If you like the project please consider making a donation toward his efforts and check out the MANY other projects he has created on GitHub.</DonateText>
    <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
-   <Date>2022-08-24</Date>
+   <Date>2023-05-23</Date>
    <Changes>
+###3.34.1
+###Fixes
+- Fix routing net.IPNet to netip.Prefix conversion (fixes #1583)
+
+###3.34.0
+###Features
+- HEALTH_SUCCESS_WAIT_DURATION variable, defaulting to 5s
+- Rename port forwarding variables (prepare to add ProtonVPN, see #1488)
+  - VPN_PORT_FORWARDING_STATUS_FILE
+  - VPN_PORT_FORWARDING
+  - Deprecate PIA specific variables for VPN port forwarding
+- Servers data updated for: perfect privacy, surfshark
+- Routing: log default route family as string
+###Fixes
+- Mullvad: add aes-256-gcm cipher to support their newer Openvpn 2.6 servers
+- Perfect privacy: update cert and key (thanks @Thamos88 and @15ky3)
+- Perfect privacy: remove check for empty hostname in servers
+- Routing: add policy rules for each destination local networks (thanks @kylemanna)
+- Settings: clarify Wireguard provider unsupported error
+- Minor fixes
+  - Pprof settings rates can be nil
+###Maintenance
+- Wrap all sentinel errors and enforce using errors.Is
+- Migrate usages of inet.af/netaddr to net/netip
+- Use netip.Prefix for ip networks instead of net.IPNet and netaddr.IPPrefix
+- Use netip.Addr instead of net.IP
+- Wireguard: use netip.AddrPort instead of *net.UDPAddr
+- Healthcheck use Go dialer preferrably
+- Upgrade Wireguard dependencies
+- Upgrade inet.af/netaddr dependency
+- Upgrade golang.org/x/net to 0.10.0
+- Upgrade github.com/fatih/color from 1.14.1 to 1.15.0
+- Upgrade golangci-lint from v1.51.2 to v1.52.2
+- Upgrade github.com/vishvananda/netlink from 1.1.1-0.20211129163951-9ada19101fc5 to 1.2.1-beta.2
+- Upgrade golang.org/x/sys from 0.7.0 to 0.8.0
+- Remove unneeded settings/helpers/pointers.go, CopyNetipPrefix and settings/sources/env envToInt function
+- Fix netlink tagged integration tests
+- Settings: use generics for helping functions (thanks @bubuntux)
+- Simplify default routes for loop
+- Development container: do not bind mount ~/.gitconfig
+
 ###3.33.3
 ###Features
 - WIREGUARD_IMPLEMENTATION variable which can be auto (default), userspace or kernelspace
