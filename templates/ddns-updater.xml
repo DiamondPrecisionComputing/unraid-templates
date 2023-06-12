@@ -67,6 +67,54 @@
   <Description>Lightweight universal DDNS Updater with Docker and web UI</Description>
   <Date>2021-10-06</Date>
   <Changes>
+###v2.5.0
+###Features
+- 🆕 providers
+  - Aliyun (#252, #253)
+  - all-inkl.com (#309)
+  - dynu.com (#285)
+  - GCP (#337, #405)
+  - inwx (#379, #473)
+  - Porkbun (#217)
+  - Servercow (#224)
+- Shoutrrr library update to v0.7.0
+- Cloudflare: create record if it does not exist (#477)
+- DNSPod: log entire JSON response on error
+- Dreamhost: allow to specify a custom host
+- Specify resolver address with the RESOLVER_ADDRESS environment variable
+- Specify resolver timeout with the RESOLVER_TIMEOUT environment variable
+- Retry getting IP address up to 3 times
+- Use github.com/breml/rootcerts v0.2.11 for TLS certs
+- Add destination to notification errors
+- Add GHCR registry image (#259)
+- pkg/publicip/info package (#189)
+- pkg/publicip: do not use providers banning us
+###Fixes
+- Cloudflare:
+  - key -> userServiceKey variable name (#462)
+  - fix service key regex
+- dd24:
+  - API call and fix (#236)
+  - Handle non-empty responses
+- ddnss.de add dual_stack parameter (#270, thanks @quantum-byte)
+- DNSOMatic:
+  - allow email addresses as user field
+  - remove password regex check
+- DNSPod add IPv6 record ID finder
+- FreeDNS fix no ip change messages decoding
+- Linode fix error decoding and set name field when creating record
+- LuaDNS match configured host instead of first record (#249)
+- Namecheap XML decoding error & allow empty IP field in response
+- OVH:
+  - fix signature in api mode
+  - support nochg responses
+- Spdyn response handling for good and nochg
+- SHOUTRRR_ADDRESSES case sensitivity fixed
+- Write JSON file from CONFIG variable
+- DNS public IP fetching timeout fixed
+- Better error messages for JSON decoding errors
+- Shoutrrr validation error wrapping
+
 ###v2.4.1
 ###Fixes
 - Fix: SHOUTRRR_ADDRESSES case sensitivity
