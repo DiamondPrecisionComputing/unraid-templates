@@ -8,120 +8,138 @@
    <Support>https://forums.unraid.net/topic/111725-support-diamondprecisioncomputing-all-images-and-files</Support>
    <Project>https://github.com/qdm12/gluetun</Project>
    <License>https://img.shields.io/github/license/qdm12/gluetun</License>
-   <Overview>&amp;lt;h1&amp;gt;Gluetun VPN client&amp;lt;/h1&amp;gt;&#xD;
-&amp;lt;p&amp;gt;Lightweight swiss-knife-like VPN client to multiple VPN service providers&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&amp;lt;img src="https://raw.githubusercontent.com/qdm12/gluetun/master/title.svg" alt="" /&amp;gt;&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&amp;lt;img src="https://github.com/qdm12/gluetun/actions/workflows/ci.yml/badge.svg" alt="" /&amp;gt;&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&amp;lt;img src="https://img.shields.io/github/release/qdm12/gluetun?label=Last%20release" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/docker/v/qmcgaw/gluetun?sort=semver&amp;amp;amp;label=Last%20Docker%20tag" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/github/release-date/qdm12/gluetun?label=Last%20release%20date" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/github/commits-since/qdm12/gluetun/latest?sort=semver" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/github/last-commit/qdm12/gluetun.svg" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/github/commit-activity/y/qdm12/gluetun.svg" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/github/issues-pr-closed/qdm12/gluetun.svg" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/github/issues/qdm12/gluetun.svg" alt="" /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;img src="https://img.shields.io/github/issues-closed/qdm12/gluetun.svg" alt="" /&amp;gt;&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;h2&amp;gt;Quick links&amp;lt;/h2&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Problem?&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Check the Wiki&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Start a discussion&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/discussions&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Fix the Unraid template&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/discussions/550&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Suggestion?&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Create an issue&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/issues/new/choose&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Want to add a VPN provider?&amp;lt;/strong&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Check the Developement page&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki/Development&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Add a Provider&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki/Add-a-provider&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;h2&amp;gt;Features&amp;lt;/h2&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Based on Alpine 3.16 for a small Docker image of 29MB&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Supports: &amp;lt;strong&amp;gt;Cyberghost&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;ExpressVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;FastestVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;HideMyAss&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;IPVanish&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;IVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Mullvad&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;NordVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Perfect Privacy&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Privado&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Private Internet Access&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;PrivateVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;ProtonVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;PureVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;SlickVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Surfshark&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;TorGuard&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;VPNSecure.me&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;VPNUnlimited&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Vyprvpn&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;WeVPN&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Windscribe&amp;lt;/strong&amp;gt; servers&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Supports OpenVPN for all providers listed&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Supports Wireguard both kernelspace and userspace&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;For &amp;lt;strong&amp;gt;Mullvad&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Ivpn&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;Surfshark&amp;lt;/strong&amp;gt; and &amp;lt;strong&amp;gt;Windscribe&amp;lt;/strong&amp;gt;&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;For &amp;lt;strong&amp;gt;Torguard&amp;lt;/strong&amp;gt;, &amp;lt;strong&amp;gt;VPN Unlimited&amp;lt;/strong&amp;gt; and &amp;lt;strong&amp;gt;WeVPN&amp;lt;/strong&amp;gt; using the custom provider&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki/Custom-provider&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;For custom Wireguard configurations using the custom provider&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki/Custom-provider&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;More in progress, see Issue #134&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/issues/134&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;DNS over TLS baked in with service provider(s) of your choice&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;DNS fine blocking of malicious/ads/surveillance hostnames and IP addresses, with live update every 24 hours&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Choose the vpn network protocol, &amp;lt;code&amp;gt;udp&amp;lt;/code&amp;gt; or &amp;lt;code&amp;gt;tcp&amp;lt;/code&amp;gt;&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Built in firewall kill switch to allow traffic only with needed the VPN servers and LAN devices&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Built in Shadowsocks proxy (protocol based on SOCKS5 with an encryption layer, tunnels TCP+UDP)&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Built in HTTP proxy (tunnels HTTP and HTTPS through TCP)&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Connect other containers to it&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki/Connect-a-container-to-gluetun&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Connect LAN devices to it&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki/Connect-a-LAN-device-to-gluetun&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Compatible with amd64, i686 (32 bit),&#xA0;&amp;lt;strong&amp;gt;ARM&#xA0;&amp;lt;/strong&amp;gt;64 bit, ARM 32 bit v6 and v7, and even ppc64le &#x1F386;&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Custom VPN server side port forwarding for Private Internet Access&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki/Private-internet-access#vpn-server-port-forwarding&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Possibility of split horizon DNS by selecting multiple DNS over TLS providers&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Unbound subprogram drops root privileges once launched&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;li&amp;gt;Can work as a Kubernetes sidecar container, thanks @rorph&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;h2&amp;gt;Setup&amp;lt;/h2&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#x1F389; There are now instructions specific to each VPN provider with examples to help you get started as quickly as possible!&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;p&amp;gt;Go to the Wiki!&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/wiki&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;p&amp;gt;&#x1F41B; Found a bug in the Wiki?!&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-&amp;lt;li&amp;gt;https://github.com/qdm12/gluetun/issues/new?assignees=&amp;amp;amp;amp;labels=&#x1F4C4;+Wiki+issue&amp;amp;amp;amp;template=wiki+issue.yml&amp;amp;amp;amp;title=Wiki+issue%3A+&amp;lt;/li&amp;gt;&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-&amp;lt;p&amp;gt;Here's a docker-compose.yml for the laziest:&amp;lt;/p&amp;gt;&#xD;
-&amp;lt;pre&amp;gt;services:&amp;lt;br /&amp;gt;  gluetun:&amp;lt;br /&amp;gt;  image: qmcgaw/gluetun&amp;lt;br /&amp;gt;  # container_name: gluetun&amp;lt;br /&amp;gt;  # line above must be uncommented to allow external containers to connect. See https://github.com/qdm12/gluetun/wiki/Connect-a-container-to-gluetun#external-container-to-gluetun&amp;lt;br /&amp;gt;  cap_add:&amp;lt;br /&amp;gt;    - NET_ADMIN&amp;lt;br /&amp;gt;  devices:&amp;lt;br /&amp;gt;    - /dev/net/tun:/dev/net/tun&amp;lt;br /&amp;gt;  ports:&amp;lt;br /&amp;gt;    - 8888:8888/tcp # HTTP proxy&amp;lt;br /&amp;gt;    - 8388:8388/tcp # Shadowsocks&amp;lt;br /&amp;gt;    - 8388:8388/udp # Shadowsocks&amp;lt;br /&amp;gt;  volumes:&amp;lt;br /&amp;gt;    - /yourpath:/gluetun&amp;lt;br /&amp;gt;  environment:&amp;lt;br /&amp;gt;  # See https://github.com/qdm12/gluetun/wiki&amp;lt;br /&amp;gt;    - VPN_SERVICE_PROVIDER=ivpn&amp;lt;br /&amp;gt;    - VPN_TYPE=openvpn&amp;lt;br /&amp;gt;  # OpenVPN:&amp;lt;br /&amp;gt;    - OPENVPN_USER=&amp;lt;br /&amp;gt;    - OPENVPN_PASSWORD=&amp;lt;br /&amp;gt;  # Wireguard:&amp;lt;br /&amp;gt;  # - WIREGUARD_PRIVATE_KEY=wOEI9rqqbDwnN8/Bpp22sVz48T71vJ4fYmFWujulwUU=&amp;lt;br /&amp;gt;  # - WIREGUARD_ADDRESSES=10.64.222.21/32&amp;lt;br /&amp;gt;  # Timezone for accurate log times&amp;lt;br /&amp;gt;    - TZ=&#xD;
-&amp;lt;/pre&amp;gt;</Overview>
+   <Overview>
+   # Gluetun VPN client
+
+Lightweight swiss-knife-like VPN client to multiple VPN service providers
+
+![Title image](https://raw.githubusercontent.com/qdm12/gluetun/master/title.svg)
+
+[![Build status](https://github.com/qdm12/gluetun/actions/workflows/ci.yml/badge.svg)](https://github.com/qdm12/gluetun/actions/workflows/ci.yml)
+
+[![Docker pulls qmcgaw/gluetun](https://img.shields.io/docker/pulls/qmcgaw/gluetun.svg)](https://hub.docker.com/r/qmcgaw/gluetun)
+[![Docker pulls qmcgaw/private-internet-access](https://img.shields.io/docker/pulls/qmcgaw/private-internet-access.svg)](https://hub.docker.com/r/qmcgaw/gluetun)
+
+[![Docker stars qmcgaw/gluetun](https://img.shields.io/docker/stars/qmcgaw/gluetun.svg)](https://hub.docker.com/r/qmcgaw/gluetun)
+[![Docker stars qmcgaw/private-internet-access](https://img.shields.io/docker/stars/qmcgaw/private-internet-access.svg)](https://hub.docker.com/r/qmcgaw/gluetun)
+
+![Last release](https://img.shields.io/github/release/qdm12/gluetun?label=Last%20release)
+![Last Docker tag](https://img.shields.io/docker/v/qmcgaw/gluetun?sort=semver&label=Last%20Docker%20tag)
+[![Last release size](https://img.shields.io/docker/image-size/qmcgaw/gluetun?sort=semver&label=Last%20released%20image)](https://hub.docker.com/r/qmcgaw/gluetun/tags?page=1&ordering=last_updated)
+![GitHub last release date](https://img.shields.io/github/release-date/qdm12/gluetun?label=Last%20release%20date)
+![Commits since release](https://img.shields.io/github/commits-since/qdm12/gluetun/latest?sort=semver)
+
+[![Latest size](https://img.shields.io/docker/image-size/qmcgaw/gluetun/latest?label=Latest%20image)](https://hub.docker.com/r/qmcgaw/gluetun/tags)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/qdm12/gluetun.svg)](https://github.com/qdm12/gluetun/commits/master)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/qdm12/gluetun.svg)](https://github.com/qdm12/gluetun/graphs/contributors)
+[![GitHub closed PRs](https://img.shields.io/github/issues-pr-closed/qdm12/gluetun.svg)](https://github.com/qdm12/gluetun/pulls?q=is%3Apr+is%3Aclosed)
+[![GitHub issues](https://img.shields.io/github/issues/qdm12/gluetun.svg)](https://github.com/qdm12/gluetun/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/qdm12/gluetun.svg)](https://github.com/qdm12/gluetun/issues?q=is%3Aissue+is%3Aclosed)
+
+[![Lines of code](https://img.shields.io/tokei/lines/github/qdm12/gluetun)](https://github.com/qdm12/gluetun)
+![Code size](https://img.shields.io/github/languages/code-size/qdm12/gluetun)
+![GitHub repo size](https://img.shields.io/github/repo-size/qdm12/gluetun)
+![Go version](https://img.shields.io/github/go-mod/go-version/qdm12/gluetun)
+
+![Visitors count](https://visitor-badge.laobi.icu/badge?page_id=gluetun.readme)
+
+## Quick links
+
+- [Setup](#setup)
+- [Features](#features)
+- Problem?
+  - [Check the Wiki](https://github.com/qdm12/gluetun/wiki)
+  - [Start a discussion](https://github.com/qdm12/gluetun/discussions)
+  - [Fix the Unraid template](https://github.com/qdm12/gluetun/discussions/550)
+- Suggestion?
+  - [Create an issue](https://github.com/qdm12/gluetun/issues)
+  - [Join the Slack channel](https://join.slack.com/t/qdm12/shared_invite/enQtOTE0NjcxNTM1ODc5LTYyZmVlOTM3MGI4ZWU0YmJkMjUxNmQ4ODQ2OTAwYzMxMTlhY2Q1MWQyOWUyNjc2ODliNjFjMDUxNWNmNzk5MDk)
+- Happy?
+  - Sponsor me on [github.com/sponsors/qdm12](https://github.com/sponsors/qdm12)
+  - Donate to [paypal.me/qmcgaw](https://www.paypal.me/qmcgaw)
+  - Drop me [an email](mailto:quentin.mcgaw@gmail.com)
+- **Want to add a VPN provider?** check [Development](https://github.com/qdm12/gluetun/wiki/Development) and [Add a provider](https://github.com/qdm12/gluetun/wiki/Add-a-provider)
+- Video:
+
+  [![Video Gif](https://i.imgur.com/CetWunc.gif)](https://youtu.be/0F6I03LQcI4)
+
+- [Substack Console interview](https://console.substack.com/p/console-72)
+
+## Features
+
+- Based on Alpine 3.18 for a small Docker image of 35.6MB
+- Supports: **AirVPN**, **Cyberghost**, **ExpressVPN**, **FastestVPN**, **HideMyAss**, **IPVanish**, **IVPN**, **Mullvad**, **NordVPN**, **Perfect Privacy**, **Privado**, **Private Internet Access**, **PrivateVPN**, **ProtonVPN**, **PureVPN**,  **SlickVPN**, **Surfshark**, **TorGuard**, **VPNSecure.me**, **VPNUnlimited**, **Vyprvpn**, **WeVPN**, **Windscribe** servers
+- Supports OpenVPN for all providers listed
+- Supports Wireguard both kernelspace and userspace
+  - For **Mullvad**, **Ivpn**, **Surfshark** and **Windscribe**
+  - For **ProtonVPN**, **PureVPN**, **Torguard**, **VPN Unlimited** and **WeVPN** using [the custom provider](https://github.com/qdm12/gluetun/wiki/Custom-provider)
+  - For custom Wireguard configurations using [the custom provider](https://github.com/qdm12/gluetun/wiki/Custom-provider)
+  - More in progress, see [#134](https://github.com/qdm12/gluetun/issues/134)
+- DNS over TLS baked in with service provider(s) of your choice
+- DNS fine blocking of malicious/ads/surveillance hostnames and IP addresses, with live update every 24 hours
+- Choose the vpn network protocol, `udp` or `tcp`
+- Built in firewall kill switch to allow traffic only with needed the VPN servers and LAN devices
+- Built in Shadowsocks proxy (protocol based on SOCKS5 with an encryption layer, tunnels TCP+UDP)
+- Built in HTTP proxy (tunnels HTTP and HTTPS through TCP)
+- [Connect other containers to it](https://github.com/qdm12/gluetun/wiki/Connect-a-container-to-gluetun)
+- [Connect LAN devices to it](https://github.com/qdm12/gluetun/wiki/Connect-a-LAN-device-to-gluetun)
+- Compatible with amd64, i686 (32 bit), **ARM** 64 bit, ARM 32 bit v6 and v7, and even ppc64le 🎆
+- [Custom VPN server side port forwarding for Private Internet Access](https://github.com/qdm12/gluetun/wiki/Private-internet-access#vpn-server-port-forwarding)
+- Possibility of split horizon DNS by selecting multiple DNS over TLS providers
+- Unbound subprogram drops root privileges once launched
+- Can work as a Kubernetes sidecar container, thanks @rorph
+
+## Setup
+
+🎉 There are now instructions specific to each VPN provider with examples to help you get started as quickly as possible!
+
+Go to the [Wiki](https://github.com/qdm12/gluetun/wiki)!
+
+[🐛 Found a bug in the Wiki?!](https://github.com/qdm12/gluetun/issues/new?assignees=&labels=%F0%9F%93%84+Wiki+issue&template=wiki+issue.yml&title=Wiki+issue%3A+)
+
+Here's a docker-compose.yml for the laziest:
+
+```yml
+version: "3"
+services:
+  gluetun:
+    image: qmcgaw/gluetun
+    # container_name: gluetun
+    # line above must be uncommented to allow external containers to connect. See https://github.com/qdm12/gluetun/wiki/Connect-a-container-to-gluetun#external-container-to-gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 8888:8888/tcp # HTTP proxy
+      - 8388:8388/tcp # Shadowsocks
+      - 8388:8388/udp # Shadowsocks
+    volumes:
+      - /yourpath:/gluetun
+    environment:
+      # See https://github.com/qdm12/gluetun/wiki
+      - VPN_SERVICE_PROVIDER=ivpn
+      - VPN_TYPE=openvpn
+      # OpenVPN:
+      - OPENVPN_USER=
+      - OPENVPN_PASSWORD=
+      # Wireguard:
+      # - WIREGUARD_PRIVATE_KEY=wOEI9rqqbDwnN8/Bpp22sVz48T71vJ4fYmFWujulwUU=
+      # - WIREGUARD_ADDRESSES=10.64.222.21/32
+      # Timezone for accurate log times
+      - TZ=
+      # Server list updater. See https://github.com/qdm12/gluetun/wiki/Updating-Servers#periodic-update
+      - UPDATER_PERIOD=
+      - UPDATER_VPN_SERVICE_PROVIDERS=
+```
+
+🆕 Image also available as `ghcr.io/qdm12/gluetun`
+
+## License
+
+[![MIT](https://img.shields.io/github/license/qdm12/gluetun)](https://github.com/qdm12/gluetun/master/LICENSE)
+   </Overview>
    <Category>Security: Network:VPN</Category>
    <WebUI>http://[IP]:[PORT:8000]</WebUI>
    <TemplateURL>https://raw.githubusercontent.com/DiamondPrecisionComputing/unraid-templates/main/templates/GluetunVPN.xml</TemplateURL>
