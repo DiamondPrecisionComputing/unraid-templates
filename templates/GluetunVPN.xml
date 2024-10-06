@@ -879,7 +879,7 @@ services:
     <Config Name="OPENVPN_PROTOCOL" Target="OPENVPN_PROTOCOL" Default="udp|tcp" Mode="" Description="OPTIONAL: Container Variable: OPENVPN_PROTOCOL" Type="Variable" Display="always" Required="false" Mask="false">udp</Config>
     <Config Name="OPENVPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="Container Variable: OPENVPN_USER" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="OPENVPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="Container Variable: OPENVPN_PASSWORD (Optional for Mullvad)" Type="Variable" Display="always" Required="true" Mask="true" />
-    <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.5|2.4" Mode="" Description="OPTIONAL: Set the OpenVPN version to run" Type="Variable" Display="always" Required="false" Mask="false">2.5</Config>
+    <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.6|2.5" Mode="" Description="OPTIONAL: Set the OpenVPN version to run" Type="Variable" Display="always" Required="false" Mask="false">2.6</Config>
     <Config Name="OPENVPN_VERBOSITY" Target="OPENVPN_VERBOSITY" Default="0|1|2|3|4|5|6" Mode="" Description="OPTIONAL: OpenVPN verbosity level" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
     <Config Name="OPENVPN_FLAGS" Target="OPENVPN_FLAGS" Default="" Mode="" Description="OPTIONAL: Space delimited OpenVPN flags to pass to openvpn" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="OPENVPN_CIPHERS" Target="OPENVPN_CIPHERS" Default="" Mode="" Description="OPTIONAL: Specify one or more custom ciphers to use" Type="Variable" Display="always" Required="false" Mask="false" />
