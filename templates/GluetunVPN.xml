@@ -29,6 +29,7 @@ Lightweight swiss-knife-like VPN client to multiple VPN service providers
 - Want to add a VPN provider?
   - Check development: https://github.com/qdm12/gluetun-wiki/blob/main/contributing/development.md
   - Add a provider: https://github.com/qdm12/gluetun-wiki/blob/main/contributing/add-a-provider.md
+
 # Features
 - Based on Alpine 3.18 for a small Docker image of 35.6MB
 - Supports: **AirVPN**, **Cyberghost**, **ExpressVPN**, **FastestVPN**, **Giganews**, **HideMyAss**, **IPVanish**, **IVPN**, **Mullvad**, **NordVPN**, **Perfect Privacy**, **Privado**, **Private Internet Access**, **PrivateVPN**, **ProtonVPN**, **PureVPN**, **SlickVPN**, **Surfshark**, **TorGuard**, **VPNSecure.me**, **VPNUnlimited**, **Vyprvpn**, **WeVPN**, **Windscribe** servers
@@ -51,6 +52,7 @@ Lightweight swiss-knife-like VPN client to multiple VPN service providers
 - Possibility of split horizon DNS by selecting multiple DNS over TLS providers
 - Unbound subprogram drops root privileges once launched
 - Can work as a Kubernetes sidecar container, thanks @rorph
+
 # Setup
 🎉 There are now instructions specific to each VPN provider with examples to help you get started as quickly as possible!
 
