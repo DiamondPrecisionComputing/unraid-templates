@@ -9,52 +9,50 @@
     <Project>https://github.com/qdm12/gluetun</Project>
     <License>https://img.shields.io/github/license/qdm12/gluetun</License>
     <Overview>
-   # Gluetun VPN client
-
 Lightweight swiss-knife-like VPN client to multiple VPN service providers
 
 ## Quick links
+- Setup
+  - https://github.com/qdm12/gluetun-wiki
 
-- [Setup](#setup)
-- [Features](#features)
 - Problem?
-  - [Check the Wiki](https://github.com/qdm12/gluetun-wiki)
-  - [Start a discussion](https://github.com/qdm12/gluetun/discussions)
-  - [Fix the Unraid template](https://github.com/qdm12/gluetun/discussions/550)
+  - Check the Wiki: https://github.com/qdm12/gluetun-wiki
+  - Start a discussion: https://github.com/qdm12/gluetun/discussions
+  - Fix the Unraid template: https://github.com/qdm12/gluetun/discussions/550
+
 - Suggestion?
-  - [Create an issue](https://github.com/qdm12/gluetun/issues)
-  - [Join the Slack channel](https://join.slack.com/t/qdm12/shared_invite/enQtOTE0NjcxNTM1ODc5LTYyZmVlOTM3MGI4ZWU0YmJkMjUxNmQ4ODQ2OTAwYzMxMTlhY2Q1MWQyOWUyNjc2ODliNjFjMDUxNWNmNzk5MDk)
+  - Create an issue: https://github.com/qdm12/gluetun/issues
+  - Join the Slack channel: https://join.slack.com/t/qdm12/shared_invite/enQtOTE0NjcxNTM1ODc5LTYyZmVlOTM3MGI4ZWU0YmJkMjUxNmQ4ODQ2OTAwYzMxMTlhY2Q1MWQyOWUyNjc2ODliNjFjMDUxNWNmNzk5MDk
+
 - Happy?
-  - Sponsor me on [github.com/sponsors/qdm12](https://github.com/sponsors/qdm12)
-  - Donate to [paypal.me/qmcgaw](https://www.paypal.me/qmcgaw)
-  - Drop me [an email](mailto:quentin.mcgaw@gmail.com)
-- **Want to add a VPN provider?** check [Development](https://github.com/qdm12/gluetun-wiki/blob/main/contributing/development.md) and [Add a provider](https://github.com/qdm12/gluetun-wiki/blob/main/contributing/add-a-provider.md)
-- Video:
+  - Sponsor me: https://github.com/sponsors/qdm12
+  - Donate: https://www.paypal.me/qmcgaw
+  - Drop me an email: quentin.mcgaw@gmail.com
 
-  [![Video Gif](https://i.imgur.com/CetWunc.gif)](https://youtu.be/0F6I03LQcI4)
-
-- [Substack Console interview](https://console.substack.com/p/console-72)
+- Want to add a VPN provider?
+  - Check development: https://github.com/qdm12/gluetun-wiki/blob/main/contributing/development.md
+  - Add a provider: https://github.com/qdm12/gluetun-wiki/blob/main/contributing/add-a-provider.md
 
 ## Features
 
 - Based on Alpine 3.18 for a small Docker image of 35.6MB
-- Supports: **AirVPN**, **Cyberghost**, **ExpressVPN**, **FastestVPN**, **HideMyAss**, **IPVanish**, **IVPN**, **Mullvad**, **NordVPN**, **Perfect Privacy**, **Privado**, **Private Internet Access**, **PrivateVPN**, **ProtonVPN**, **PureVPN**,  **SlickVPN**, **Surfshark**, **TorGuard**, **VPNSecure.me**, **VPNUnlimited**, **Vyprvpn**, **WeVPN**, **Windscribe** servers
+- Supports: **AirVPN**, **Cyberghost**, **ExpressVPN**, **FastestVPN**, **Giganews**, **HideMyAss**, **IPVanish**, **IVPN**, **Mullvad**, **NordVPN**, **Perfect Privacy**, **Privado**, **Private Internet Access**, **PrivateVPN**, **ProtonVPN**, **PureVPN**, **SlickVPN**, **Surfshark**, **TorGuard**, **VPNSecure.me**, **VPNUnlimited**, **Vyprvpn**, **WeVPN**, **Windscribe** servers
 - Supports OpenVPN for all providers listed
 - Supports Wireguard both kernelspace and userspace
   - For **Mullvad**, **Ivpn**, **Surfshark** and **Windscribe**
-  - For **ProtonVPN**, **PureVPN**, **Torguard**, **VPN Unlimited** and **WeVPN** using [the custom provider](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/custom.md)
-  - For custom Wireguard configurations using [the custom provider](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/custom.md)
-  - More in progress, see [#134](https://github.com/qdm12/gluetun/issues/134)
+  - For **ProtonVPN**, **PureVPN**, **Torguard**, **VPN Unlimited** and **WeVPN** using the custom provider
+  - For custom Wireguard configurations using [the custom provider
+  - More in progress, see: https://github.com/qdm12/gluetun/issues/134
 - DNS over TLS baked in with service provider(s) of your choice
 - DNS fine blocking of malicious/ads/surveillance hostnames and IP addresses, with live update every 24 hours
 - Choose the vpn network protocol, `udp` or `tcp`
 - Built in firewall kill switch to allow traffic only with needed the VPN servers and LAN devices
 - Built in Shadowsocks proxy (protocol based on SOCKS5 with an encryption layer, tunnels TCP+UDP)
 - Built in HTTP proxy (tunnels HTTP and HTTPS through TCP)
-- [Connect other containers to it](https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md)
-- [Connect LAN devices to it](https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-lan-device-to-gluetun.md)
+- Connect other containers to it
+- Connect LAN devices to it
 - Compatible with amd64, i686 (32 bit), **ARM** 64 bit, ARM 32 bit v6 and v7, and even ppc64le 🎆
-- [Custom VPN server side port forwarding for Private Internet Access](https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/private-internet-access.md#vpn-server-port-forwarding)
+- Custom VPN server side port forwarding for Private Internet Access
 - Possibility of split horizon DNS by selecting multiple DNS over TLS providers
 - Unbound subprogram drops root privileges once launched
 - Can work as a Kubernetes sidecar container, thanks @rorph
@@ -63,43 +61,7 @@ Lightweight swiss-knife-like VPN client to multiple VPN service providers
 
 🎉 There are now instructions specific to each VPN provider with examples to help you get started as quickly as possible!
 
-Go to the [Wiki](https://github.com/qdm12/gluetun-wiki)!
-
-Here's a docker-compose.yml for the laziest:
-
-```yml
-version: "3"
-services:
-  gluetun:
-    image: qmcgaw/gluetun
-    # container_name: gluetun
-    # line above must be uncommented to allow external containers to connect. See https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md#external-container-to-gluetun
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun:/dev/net/tun
-    ports:
-      - 8888:8888/tcp # HTTP proxy
-      - 8388:8388/tcp # Shadowsocks
-      - 8388:8388/udp # Shadowsocks
-    volumes:
-      - /yourpath:/gluetun
-    environment:
-      # See https://github.com/qdm12/gluetun-wiki
-      - VPN_SERVICE_PROVIDER=ivpn
-      - VPN_TYPE=openvpn
-      # OpenVPN:
-      - OPENVPN_USER=
-      - OPENVPN_PASSWORD=
-      # Wireguard:
-      # - WIREGUARD_PRIVATE_KEY=wOEI9rqqbDwnN8/Bpp22sVz48T71vJ4fYmFWujulwUU=
-      # - WIREGUARD_ADDRESSES=10.64.222.21/32
-      # Timezone for accurate log times
-      - TZ=
-      # Server list updater. See https://github.com/qdm12/gluetun-wiki/blob/main/setup/options/updater.md
-      - UPDATER_PERIOD=
-      - UPDATER_VPN_SERVICE_PROVIDERS=
-```
+Go to the Wiki: https://github.com/qdm12/gluetun-wiki
 
 🆕 Image also available as `ghcr.io/qdm12/gluetun`
 
@@ -116,759 +78,12 @@ services:
     <DonateLink>https://www.paypal.me/qmcgaw</DonateLink>
     <Date>2023-05-23</Date>
     <Changes>
-
-###3.39.0
-###Features
-- OpenVPN: default version changed from 2.5 to 2.6
-- Alpine upgraded from 3.18 to 3.20 (3.19 got skipped due to buggy iptables)
-- Healthcheck: change timeout mechanism
-  - Healthcheck timeout is no longer fixed to 3 seconds
-  - Healthcheck timeout increases from 2s to 4s, 6s, 8s, 10s
-  - No 1 second wait time between check retries after failure
-  - VPN internal restart may be delayed by a maximum of 10 seconds
-- Firewall:
-  - Query iptables binary variants to find which one to use depending on the kernel
-  - Prefer using iptables-nft over iptables-legacy (Alpine new default is nft backend iptables)
-- Wireguard:
-  - WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL option
-  - read configuration file without case sensitivity
-- VPN Port forwarding: only use port forwarding enabled servers if VPN_PORT_FORWARDING=on (applies only to PIA and ProtonVPN for now)
-- FastestVPN:
-  - Wireguard support (#2383 - Credits to @Zerauskire for the initial investigation and @jvanderzande for an initial implementation as well as reviewing the pull request)
-  - use API instead of openvpn zip file to fetch servers data
-  - add city filter SERVER_CITY
-  - update built-in servers data
-- Perfect Privacy: port forwarding support with VPN_PORT_FORWARDING=on (#2378)
-- Private Internet Access: port forwarding options VPN_PORT_FORWARDING_USERNAME and VPN_PORT_FORWARDING_PASSWORD (retro-compatible with OPENVPN_USER and OPENVPN_PASSWORD)
-- ProtonVPN:
-  - Wireguard support (#2390)
-  - feature filters SECURE_CORE_ONLY, TOR_ONLY and PORT_FORWARD_ONLY (#2182)
-  - determine "free" status using API tier value
-  - update built-in servers data
-- Surfshark: servers data update
-- VPNSecure: servers data update
-- VPN_ENDPOINT_IP split into OPENVPN_ENDPOINT_IP and WIREGUARD_ENDPOINT_IP
-- VPN_ENDPOINT_PORT split into OPENVPN_ENDPOINT_PORT and WIREGUARD_ENDPOINT_PORT
-###Fixes
-- VPN_PORT_FORWARDING_LISTENING_PORT fixed
-- IPv6 support detection ignores loopback route destinations
-- Custom provider:
-  - handle port option line for OpenVPN
-  - ignore comments in an OpenVPN configuration file
-  - assume port forwarding is always supported by a custom server
-- VPN Unlimited:
-  - change default UDP port from 1194 to 1197
-  - allow OpenVPN TCP on port 1197
-- Private Internet Access Wireguard and port forwarding
-  - Set server name if names filter is set with the custom provider (see #2147)
-- PrivateVPN: updater now sets openvpn vpn type for the no-hostname server
-- Torguard: update OpenVPN configuration
-  - add aes-128-gcm and aes-128-cbc ciphers
-  - remove mssfix, sndbuf, rcvbuf, ping and reneg options
-- VPNSecure: associate N / A with no data for servers
-- AirVPN: set default mssfix to 1320-28=1292
-- Surfshark: remove outdated hardcoded retro servers
-- Public IP echo:
-  - ip2location parsing for latitude and longitude fixed
-  - abort ip data fetch if vpn context is canceled (prevents requesting the public IP address N times after N VPN failures)
-- internal/server: /openvpn route status get and put
-  - get status return stopped if running Wireguard
-  - put status changes vpn type if running Wireguard
-- Log out if PORT_FORWARD_ONLY is enabled in the server filtering tree of settings
-- Log last Gluetun release by tag name alphabetically instead of by release date
-- format-servers fixed missing VPN type header for providers supporting Wireguard: NordVPN and Surfshark
-- internal/tun: only create tun device if it does not exist, do not create if it exists and does not work
-###Documentation
-- readme:
-  - clarify shadowsocks proxy is a server, not a client
-  - update list of providers supporting Wireguard with the custom provider
-  - add protonvpn as custom port forwarding implementation
-- disable Github blank issues
-- Bump github.com/qdm12/gosplash to v0.2.0
-  - Add /choose suffix to github links in logs
-- add Github labels: "Custom provider", "Category: logs" and "Before next release"
-- rename FIREWALL_ENABLED to FIREWALL_ENABLED_DISABLING_IT_SHOOTS_YOU_IN_YOUR_FOOT due to the sheer amount of users misusing it. FIREWALL_ENABLED won't do anything anymore. At least you've been warned not to use it...
-###Maintenance
-- Code health
-  - PIA port forwarding:
-    - remove dependency on storage package
-    - return an error to port forwarding loop if server cannot port forward
-  - internal/config:
-    - upgrade to github.com/qdm12/gosettings v0.4.2
-    - drop github.com/qdm12/govalid dependency
-    - upgrade github.com/qdm12/ss-server to v0.6.0
-    - do not un-set sensitive config settings anymore
-    - removed bad/invalid retro-compatible keys CONTROL_SERVER_ADDRESS and CONTROL_SERVER_PORT
-    - OpenVPN protocol field is now a string instead of a TCP boolean
-    - Split server filter validation for features and subscription-tier
-    - provider name field as string instead of string pointer
-  - internal/portforward: support multiple ports forwarded
-  - Fix typos in code comments (#2216)
-  - internal/tun: fix unit test for unprivileged user
-- Development environment
-  - fix source.organizeImports vscode setting value
-  - linter: remove now invalid skip-dirs configuration block
-- Dependencies
-  - Bump Wireguard Go dependencies
-  - Bump Go from 1.21 to 1.22
-  - Bump golang.org/x/net from 0.19.0 to 0.25.0 (#2138, #2208, #2269)
-  - Bump golang.org/x/sys from 0.15.0 to 0.18.0 (#2139)
-  - Bump github.com/klauspost/compress from 1.17.4 to 1.17.8 (#2178, #2218)
-  - Bump github.com/fatih/color from 1.16.0 to 1.17.0 (#2279)
-  - Bump github.com/stretchr/testify to v1.9.0
-  - Do not upgrade busybox since vulnerabilities are fixed now with Alpine 3.19+
-- CI
-  - Bump DavidAnson/markdownlint-cli2-action from 14 to 16 (#2214)
-  - Bump peter-evans/dockerhub-description from 3 to 4 (#2075)
-- Github
-  - remove empty label description fields
-  - add /choose suffix to issue and discussion links
-  - review all issue labels: add closed labels, add category labels, rename labels, add label category prefix, add emojis for each label
-  - Add issue labels: Popularity extreme and high, Closed cannot be done, Categories kernel and public IP service
-###3.38.1
-###Fixes
-- VPN_PORT_FORWARDING_LISTENING_PORT fixed
-- IPv6 support detection ignores loopback route destinations
-- Custom provider:
-  - handle port option line for OpenVPN
-  - ignore comments in an OpenVPN configuration file
-  - assume port forwarding is always supported by a custom server
-- VPN Unlimited:
-  - change default UDP port from 1194 to 1197
-  - allow OpenVPN TCP on port 1197
-- Private Internet Access Wireguard and port forwarding
-  - Set server name if names filter is set with the custom provider (see #2147)
-- PrivateVPN: updater now sets openvpn vpn type for the no-hostname server
-- Torguard: update OpenVPN configuration
-  - add aes-128-gcm and aes-128-cbc ciphers
-  - remove mssfix, sndbuf, rcvbuf, ping and reneg options
-- VPNSecure: associate N / A with no data for servers
-- AirVPN: set default mssfix to 1320-28=1292
-- Surfshark: remove outdated hardcoded retro servers
-- Public IP echo:
-  - ip2location parsing for latitude and longitude fixed
-  - abort ip data fetch if vpn context is canceled (prevents requesting the public IP address N times after N VPN failures)
-- internal/server: /openvpn route status get and put
-  - get status return stopped if running Wireguard
-  - put status changes vpn type if running Wireguard
-- Log out if PORT_FORWARD_ONLY is enabled in the server filtering tree of settings
-- Log last Gluetun release by tag name alphabetically instead of by release date
-- format-servers fixed missing VPN type header for providers supporting Wireguard: NordVPN and Surfshark
-- internal/tun: only create tun device if it does not exist, do not create if it exists and does not work
-
-###3.37.1
-###Fixes
-- VPN_PORT_FORWARDING_LISTENING_PORT fixed
-- IPv6 support detection ignores loopback route destinations
-- STREAM_ONLY behavior fixed (#2126)
-- Custom provider:
-  - handle port option line for OpenVPN
-  - ignore comments in an OpenVPN configuration file
-  - assume port forwarding is always supported by a custom server
-- VPN Unlimited:
-  - change default UDP port from 1194 to 1197
-  - allow OpenVPN TCP on port 1197
-- Private Internet Access Wireguard and port forwarding
-  - Set server name if names filter is set with the custom provider (see #2147)
-- PrivateVPN: updater now sets openvpn vpn type for the no-hostname server
-- Torguard: update OpenVPN configuration
-  - add aes-128-gcm and aes-128-cbc to the ciphers option
-  - remove mssfix, sndbuf, rcvbuf, ping and reneg options
-  - set HTTP user agent to be allowed to download zip files
-- VPNSecure: associate N / A with no data for servers
-- AirVPN: set default mssfix to 1320-28=1292
-- Surfshark:
-  - remove outdated hardcoded retro servers
-  - Remove no longer valid multi hop regions
-  - Fail validation for empty string region
-  - Clearer error message for surfshark regions: only log possible 'new' server regions, do not log old retro-compatible server regions
-- Privado: update OpenVPN zip file URL
-- internal/server: /openvpn route status get and put
-  - get status return stopped if running Wireguard
-  - put status changes vpn type if running Wireguard
-- Log out last Gluetun release by semver tag name instead of by date
-- format-servers fixed missing VPN type header for providers supporting Wireguard: NordVPN and Surfshark
-- internal/tun: only create tun device if it does not exist, do not create if it exists and does not work
-- Bump github.com/breml/rootcerts from 0.2.14 to 0.2.17
-- PS: sorry for re-releasing this one 3 times, CI has been capricious with passing
-
-###3.38.0
-###Features
-- Public IP fetching:
-  - Add PUBLICIP_API_TOKEN variable
-  - PUBLICIP_API variable supporting ipinfo and ip2location
-- Private Internet Access: PORT_FORWARD_ONLY variable (#2070)
-- NordVPN:
-  - update mechanism uses v2 NordVPN web API
-  - Filter servers with SERVER_CATEGORIES (#1806)
-- Wireguard:
-  - Read config from secret file, defaults to /run/secrets/wg0.conf which can be changed with variable WIREGUARD_CONF_SECRETFILE
-  - Read private key, preshared key and addresses from individual secret files (#1348)
-- Firewall: disallow the unspecified address (0.0.0.0/0 or ::/0) for outbound subnets
-- Built-in servers data updated:
-  - NordVPN
-  - Privado
-  - Private Internet Access
-  - VPN Unlimited
-  - VyprVPN
-- Healthcheck: change unhealthy log from info to debug level
-###Fixes
-- Privado: update OpenVPN zip file URL
-- STREAM_ONLY behavior fixed (#2126)
-- Torguard: set user agent to be allowed to download zip files
-- Surfshark:
-  - Remove no longer valid multi hop regions
-  - Fail validation for empty string region
-  - Clearer error message for surfshark regions: only log possible 'new' server regions, do not log old retro-compatible server regions
-###Maintenance
-- Healthcheck: more explicit log to go read the Wiki health guide
-- NAT-PMP: RPC error contain all failed attempt messages
-- Github:
-  - add closed issue workflow stating comments are not monitored
-  - add opened issue workflow
-- Dependencies
-  - Bump github.com/breml/rootcerts from 0.2.14 to 0.2.16 (#2094)
-- CI
-  - Pin docker/build-push-action to v5 (without minor version)
-  - Upgrade linter to v1.56.2
-###3.37.0
-###Features
-- Port forwarding: port redirection with VPN_PORT_FORWARDING_LISTENING_PORT
-- Custom provider: support tcp-client proto for OpenVPN
-- NordVPN: add access token warning if used as wireguard private key
-- Windscribe: update servers data
-###Fixes
-- Shadowsocks: bump from v0.5.0-rc1 to v0.5.0
-  - treat udp read error as non critical
-  - log out crash error for tcpudp combined server
-- Wireguard:
-  - Load preshared key from toml file correctly and from peer selection
-- Custom provider OpenVPN:
-  - Default TCP port for any tcp protocol
-- Firewall:
-  - Handle OpenVPN tcp-client protocol as tcp
-- PureVPN: fix update url and update servers (#1992)
-- VPN Unlimited OpenVPN:
-  - Update CA certificate and add new second certificate
-  - Remove DEFAULT:@SECLEVEL=0
-  - Specify cipher as AES-256-CBC and auth as SHA512
-- Format-servers command:
-  - Fix for providers with dashes
-  - Add missing server name header for PIA
-###Maintenance
-- Bump github.com/breml/rootcerts from 0.2.11 to 0.2.14 (#1800, #1981)
-- Bump github.com/fatih/color from 1.15.0 to 1.16.0 (#1950)
-- Bump github.com/klauspost/compress from 1.16.7 to 1.17.4 (#1922, #1993)
-- Bump golang.org/x/crypto from 0.16.0 to 0.17.0 (#2012)
-- Bump golang.org/x/net from 0.12.0 to 0.19.0 (#1907, #1953, #1985)
-- Bump golang.org/x/sys from 0.11.0 to 0.13.0 (#1897)
-- Bump golang.org/x/text from 0.11.0 to 0.14.0 (#1845, #1946)
-- CI:
-  - Bump actions/checkout from 3 to 4 (#1847)
-  - Bump crazy-max/ghaction-github-labeler from 4 to 5 (#1858)
-  - Bump DavidAnson/markdownlint-cli2-action from 11 to 14 (#1871, #1982)
-  - Bump docker/build-push-action from 4.1.1 to 5.1.0 (#1860, #1969)
-  - Bump docker/login-action from 2 to 3 (#1936)
-  - Bump docker/metadata-action from 4 to 5 (#1937)
-  - Bump docker/setup-buildx-action from 2 to 3 (#1938)
-  - Bump docker/setup-qemu-action from 2 to 3 (#1861)
-  - Bump github/codeql-action from 2 to 3 (#2002)
-
-###3.36.0
-###Features
-- Wireguard
-  - WIREGUARD_ALLOWED_IPS variable (#1291)
-  - Parse settings from /gluetun/wireguard/wg0.conf (#1120)
-- VPN server port forwarding
-  - VPN_PORT_FORWARDING_PROVIDER variable (#1616)
-  - ProtonVPN port forwarding support with NAT-PMP (#1543)
-- Servers data
-  - Surfshark servers data API endpoint updated (#1560)
-  - Built-in servers data updated for Cyberghost, Mullvad, Torguard, Surfshark
-- Clarify "Wireguard is up" message logged
-- Updater log warning about using -minratio if not enough servers are found
-- Configuration: add /32 if not present for Wireguard addresses
-###Fixes
-- Minor breaking change: DNS_KEEP_NAMESERVER leaves DNS fully untouched
-- Minor breaking change: update command uses dashes instead of spaces for provider names (i.e. -vpn\ unlimited -> -vpn-unlimited)
-- Port forwarding run loop reworked and fixed (#1874)
-- Public IP fetching run loop reworked and fixed
-- ProtonVPN: add aes-256-gcm cipher for OpenVPN
-- Custom provider: allow custom endpoint port setting
-- IPv6 support for ipinfo (#1853)
-- Routing: VPNLocalGatewayIP Wireguard support
-- Routing: add outbound subnets routes only for matching ip families
-- Routing: change firewall only for matching ip families
-- Netlink: try loading Wireguard module if not found (#1741)
-- Public IP: do not retry when doing too many requests
-###Documentation
-- Readme
-  - remove UPDATER_VPN_SERVICE_PROVIDERS in docker-compose config
-  - remove Slack channel link (don't have time to check it)
-  - update Wireguard native integrations support list
-- Update to use newer wiki repository
-  - update URLs logged by program
-  - update README.md links
-  - update contributing guide link
-  - update issue templates links
-  - replace Wiki issue template by link to Gluetun Wiki repository issue creation
-  - set program announcement about Github wiki new location
-- Issue templates
-  - add Unraid as option in bug issue template
-  - provide minimum requirements for an issue: title must be filled, at least 10 lines of log provided, Gluetun version must be provided
-###Maintenance
-- Dockerfile: add missing environment variables
-  - OPENVPN_PROCESS_USER value defaults to root
-  - Add HTTPPROXY_STEALTH=off
-  - Add HTTP_CONTROL_SERVER_LOG=on
-- Code
-  - internal/settings: change source precedence order: Secret files then files then environment variables
-  - internal/routing: Wrap setupIPv6 rule error correctly
-  - Move vpn gateway obtention within port forwarding service
-  - internal/vpn: fix typo portForwader -> portForwarder
-  - internal/provider: use type assertion for port forwarders
-- CI
-  - rename workflow to Markdown
-  - Markdown workflow triggers on *.md files only
-  - Markdown workflow triggers for pull requests as well
-  - Markdown job runs misspell, linting and dead link actions
-  - Markdown publishing step to Docker Hub is only for pushes to the master branch
-  - Add markdown-skip workflow
-- Dependencies
-  - Upgrade Go to 1.21
-  - Upgrade linter to v1.54.1
-  - Bump golang.org/x/text from 0.10.0 to 0.11.0 (#1726)
-  - Bump golang.org/x/sys from 0.8.0 to 0.11.0 (#1732, #1786)
-  - Bump golang.org/x/net from 0.10.0 to 0.12.0 (#1729)
-  - bump gosettings to v0.4.0-rc1
-
-###3.35.0
-###Features
-- WIREGUARD_MTU enviromnent variable (#1571)
-- OPENVPN_VERSION=2.6 support
-- Soft breaking changes:
-  - Openvpn 2.4 no longer supported
-  - Control server JSON field names changed
-- NordVPN Wireguard support and new API endpoint (#1380)
-- Wireguard MTU defaults to 1400 instead of 1420
-- Wireguard debug logs log obfuscated keys
-- Bump Alpine from 3.17 to 3.18
-- Shadowsocks bumped from v0.4.0 to v0.5.0-rc1
-###Fixes
-- AirVPN: allow Airvpn as Wireguard provider
-- routing: ip family match function ipv4-in-ipv6 should match ipv6
-- HTTP proxy: fix httpproxy.go error message (#1596)
-- Netlink:
-  - RouteList list routes from all tables and does no longer filter by link
-  - use AddrReplace instead of AddrAdd
-- Wireguard: delete existing Wireguard link before adding it
-###Maintenance
-- internal/routing:
-  - remove old assigned ip debug log
-  - unexport IPIsPrivate as ipIsPrivate
-  - remove unused VPNDestinationIP
-- internal/settings: use github.com/qdm12/gosettings
-  - remove now unused settings helpers
-  - remove now unused helpers/messages.go
-  - use helping functions: FileExists, ObfuscateKey, BoolToYesNo
-  - use gosettings/sources/env functions
-- internal/netlink:
-  - IPv6 detection simplified
-  - Define own types with minimal fields and separate code by OS
-  - Allow to swap github.com/vishvananda/netlink
-  - Add files tagged for each platform
-  - Create non-implemented files for NOT linux
-  - Allow development on non-Linux platforms
-- internal/httpproxy: add Test_returnRedirect to prevent error wrap of ErrUseLastResponse
-- internal/settings/secrets: add test for readSecretFileAsStringPtr
-
-###3.34.2
-###Fixes
-- HTTP Proxy: redirect from http to https
-
-###3.34.1
-###Fixes
-- Fix routing net.IPNet to netip.Prefix conversion (fixes #1583)
-
 ###3.34.0
-###Features
-- HEALTH_SUCCESS_WAIT_DURATION variable, defaulting to 5s
-- Rename port forwarding variables (prepare to add ProtonVPN, see #1488)
-  - VPN_PORT_FORWARDING_STATUS_FILE
-  - VPN_PORT_FORWARDING
-  - Deprecate PIA specific variables for VPN port forwarding
-- Servers data updated for: perfect privacy, surfshark
-- Routing: log default route family as string
-###Fixes
-- Mullvad: add aes-256-gcm cipher to support their newer Openvpn 2.6 servers
-- Perfect privacy: update cert and key (thanks @Thamos88 and @15ky3)
-- Perfect privacy: remove check for empty hostname in servers
-- Routing: add policy rules for each destination local networks (thanks @kylemanna)
-- Settings: clarify Wireguard provider unsupported error
-- Minor fixes
-  - Pprof settings rates can be nil
-###Maintenance
-- Wrap all sentinel errors and enforce using errors.Is
-- Migrate usages of inet.af/netaddr to net/netip
-- Use netip.Prefix for ip networks instead of net.IPNet and netaddr.IPPrefix
-- Use netip.Addr instead of net.IP
-- Wireguard: use netip.AddrPort instead of *net.UDPAddr
-- Healthcheck use Go dialer preferrably
-- Upgrade Wireguard dependencies
-- Upgrade inet.af/netaddr dependency
-- Upgrade golang.org/x/net to 0.10.0
-- Upgrade github.com/fatih/color from 1.14.1 to 1.15.0
-- Upgrade golangci-lint from v1.51.2 to v1.52.2
-- Upgrade github.com/vishvananda/netlink from 1.1.1-0.20211129163951-9ada19101fc5 to 1.2.1-beta.2
-- Upgrade golang.org/x/sys from 0.7.0 to 0.8.0
-- Remove unneeded settings/helpers/pointers.go, CopyNetipPrefix and settings/sources/env envToInt function
-- Fix netlink tagged integration tests
-- Settings: use generics for helping functions (thanks @bubuntux)
-- Simplify default routes for loop
-- Development container: do not bind mount ~/.gitconfig
+- See release notes here: https://github.com/qdm12/gluetun/releases/tag/v3.40.0
 
-###3.33.3
-###Features
-- WIREGUARD_IMPLEMENTATION variable which can be auto (default), userspace or kernelspace
-- gchr.io/qdm12/gluetun Docker image mirror
-- Alpine upgraded from 3.16 to 3.17
-- OpenVPN upgraded from 2.5.6 to 2.5.8 built with OpenSSL 3
-- OpenSSL 1.1.* installed separately to maintain OpenVPN 2.4 working
-- Logging:
-  - log FAQ Github Wiki URL when the VPN internally restarts
-  - Warn Openvpn 2.4 is to be removed in the next release
-  - Warn when using SlickVPN or VPN Unlimited due to their weak certificates
-  - Warn Hide My Ass is no longer supported (credits to @Fukitsu)
-  - OpenVPN RTNETLINK answers: File exists changed to warning level with explanation
-  - OpenVPN Linux route add command failed: changed to warning level with explanation
-  - Log IPv6 support at debug level with more information instead of at the info level
-- Update servers data: AirVPN, FastestVPN, Mullvad, Surfshark, Private Internet Access
-- Netlink: add debug logger (no use yet)
-- Surfshark: add 2 new 'HK' servers
-- Install Alpine wget package (fixes #1260, #1494 due to busybox's buggy wget)
-- OpenVPN: transparently upgrade key encryption for DES-CBC encrypted keys (VPN Secure)
-###Important Fixes
-- Exit with code 1 on a program error
-- Profiling server: do not run if disabled
-- IPv6 detection: inspect each route source and destination for buggy kernels/container runtimes
-- iptables detection: better interpret permission denied for buggy kernels/container runtimes
-- FastestVPN: update OpenVPN zip file URL for the updater (#1264)
-- IPVanish: update OpenVPN zip file URL for the updater (#1449)
-- Surfshark: remove 3 servers no longer resolving 
-- IPv6 detection: inspect each route source and destination for buggy kernels/container runtimes
-- AirVPN
-  - remove commas from API locations
-  - remove commas from city names- 
-- VPN Unlimited: lower TLS security level to 0 to allow weak certificates to work with Openvpn 2.5.8+Openssl 3
-- SlickVPN
-  - explicitely allow AES-256-GCM cipher
-  - lower TLS security level to 0 to allow SlickVPN's weak certificates to work with Openvpn 2.5.8+Openssl 3
-  - All servers support TCP and UDP
-  - Precise default TCP port as 443
-###Documentation
-- Document new docker image gchr.io/qdm12/gluetun
-- Add servers updater environment variables (#1393)
-- Update Github labels:
-  - remove issue category labels
-  - Add temporary status labels
-  - Add complexity labels
-###Minor Fixes
-- Firewall: remove previously allowed input ports
-- HTTP proxy: lower shutdown wait from 2s to 100ms
-- Private Internet Access: remove credentials from login error string
-- Wireguard:
-  - validate Wireguard addresses depending on IPv6 support
-  - ignore IPv6 interface addresses if IPv6 is not supported
-- Healthcheck client: set unset health settings to defaults
-- Print outbound subnets settings correctly
-- github.com/breml/rootcerts from 0.2.8 to 0.2.10
-- Add subprogram name in version check error
-###Maintenance
-- Development tooling:
-  - Go upgraded from 1.19 to 1.20
-  - Development container has the same ssh bind mount for all platforms
-  - Development container has openssl installed
-  - golangci-lint upgraded from v1.49.0 to v1.51.2
-  - github.com/stretchr/testify upgraded from 1.8.1 to 1.8.2
-- Dependencies
-  - golang.org/x/text upgraded from 0.4.0 to 0.8.0
-  - github.com/fatih/color upgraded from 1.13.0 to 1.14.1
-  - golang.org/x/sys upgraded from 0.3.0 to 0.6.0
-  - Remove no longer needed apk-tools
-- Code health
-  - Add comments for OpenVPN settings fields about their base64 DER encoding
-  - internal/openvpn/extract: simplify PEM extraction function
-  - Review all error wrappings
-    - remove repetitive cannot and failed prefixes
-    - rename unmarshaling to decoding
-- CI
-  - docker/build-push-action upgraded from 3.2.0 to 4.0.0
-
-###3.32.0
-###Features
-- AirVPN support (#1145)
-- Surfshark Wireguard support (#587)
-- IPv6 connection and tunneling (#1114)
-- Auto detection of IPv6 support for OpenVPN and OPENVPN_IPV6 removed
-- Built-in servers updates: Cyberghost, FastestVPN, Ivpn, Mullvad, ProtonVPN, PureVPN and Windscribe
-- HTTP proxy: log credentials sent on mismatch
-###Fixes
-- Private Internet Access: get token for port forwarding (#1132)
-- FastestVPN: updater handles lowercase .ovpn filenames
-- Ivpn: update mechanism fixed for Wireguard servers
-- Cyberghost: remove outdated server groups 94-1 pemium udp usa, 95-1 premium udp asia, 93-1 pemium udp usa and 96-1 premium tcp asia
-- Exit with OS code 0 on successful shutdown
-- Public IP fetching
-  - handle HTTP status codes 403 as too many requests
-  - no retry when too many requests to ipinfo.io
-- OpenVPN: do not set tun-ipv6
-  - server should push tun-ipv6 if it is available
-  - Add ignore filter for tun-ipv6 if ipv6 is not supported on client
-- Updater: error when server has not the minimal information
-- Custom provider: OPENVPN_CUSTOM_CONFIG takes precedence only if VPN_SERVICE_PROVIDER is empty
-- Wireguard: ignore IPv6 addresses if IPv6 is disabled
-- Environment variables: trim space for wireguard addresses
-- OpenVPN: parse udp4, udp6, tcp4 or tcp6
-
-###3.31.1
-###Fixes
-- Fix vpnsecure.me operation by allowing empty OpenVPN username
-
-###3.31.0
-###Features
-- SlickVPN Support (#961)
-- VPNsecure.me support (#848)
-- Update servers data built-in for ExpressVPN, Surfshark
-- Control server: add /vpn route to replace /openvpn (in future v4.0.0)
-- Control server: patch VPN settings using HTTP PUT at /v1/vpn/settings (undocumented, experimental)
-###Fixes
-- Surfshark: remove no longer valid retro server data
-- Bump github.com/breml/rootcerts from 0.2.3 to 0.2.6 (#1033, #1058)
-
-###3.30.1
-###Fixes
-- OpenVPN certificate: read PEM encoded files and read base 64 encoded PEM inner value from environment variable (as documented in Wiki)
-- OpenVPN key: read PEM encoded files and read base 64 encoded PEM inner value from environment variable (as documented in Wiki)
-
-###3.30.0
-###Features
-- ExpressVPN: OpenVPN additional ciphers (#1047)
-- Storage
-  - add "keep" boolean field for servers to keep manually added servers
-  - log time difference as a friendly duration
-- Updater: configurable minimum ratio of servers found
-  - UPDATER_MIN_RATIO environment variable
-  - -minratio flag for CLI operation
-- Docker: upgrade Alpine from 3.15 to 3.16 (#1005)
-- Update servers data: Perfect privacy, Purevpn, Privatevpn, Private Internet Access, ProtonVPN, IPVanish, Surfshark
-- Environment variables: clean values by removing surrounding spaces and suffix new line characters
-- Wireguard: add debug logs for IPv6 detection which can be enabled with LOG_LEVEL=debug
-###Fixes
-- ExpressVPN: OpenVPN fragment option taken into account (#1047)
-- Private internet access
-  - load custom certificate to communicate with their API
-  - restrict custom port choice
-- ProtonVPN
-  - set free field for free servers, fixing FREE_ONLY behavior
-  - remove duplicate entry IPs
-  - restrict custom port choice
-- Wireguard: continue on ipv6 route add permission denial
-- VPN: do not close wait error channel on consumer side
-- Port forwarding: set file owned by the uid and gid set by PUID and PGID
-- Private Internet Access: remove duplicate log of port forwarding data expiration
-- Pprof settings: override method used correctly in global settings
-- Updater: Fix CLI operation not setting DNS server
-- IPVanish: remove duplicate server entries
-- Custom: validate custom OpenVPN file at settings validation
-
-###3.29.0
-###Features
-- Firewall
-  - Auto-detect iptables and iptables-nft for IPv4 and IPv6
-  - Improve error message when NET_ADMIN capability is missing
-  - Support all default routes instead of only the first one
-    - Accept output traffic from all default routes through VPN interface
-    - Accept output from all default routes to outbound subnets
-    - Accept all input traffic on ports for all default routes
-    - Add IP rules for all default routes
-  - Add IPv6 inbound routing
-- Provider Specific
-  - Servers update: Mullvad, Privado, PrivateVPN, ProtonVPN, PureVPN, NordVPN, Private Internet Access, Torguard, FastestVPN (thanks @mircoianese #923)
-  - NordVPN: remove OpenVPN compression
-  - Ivpn: allow no password for account IDs matching i-xxxx-xxxx-xxxx or ivpn-xxxx-xxxx-xxxx
-- Other
-  - Use https://github.com/qdm12/log for logging
-  - Log out OS signal name when shutting down
-  - Storage: omit empty fields in servers.json
-###Fixes
-- Health check
-  - HEALTH_TARGET_ADDRESS to replace HEALTH_ADDRESS_TO_PING
-  - Remove github.com/go-ping/ping dependency
-  - Dial TCP the target address, appending :443 if port is not set
-  - Target address defaults to cloudflare.com:443
-- OPENVPN_FLAGS working fixed
-- HEALTH_VPN_DURATION_ADDITION working fixed
-- Privado: fix OPENVPN_PORT usage, thanks @cacti-user
-- Firewall: only set routes for IPv4 default routes
-- Use openvpn 2.4.12-r0 in CI build for openvpn 2.4
-- Fix PureVPN zip file download link (#915 thanks @mircoianese)
-- Private Internet Access: hide escaped url query values (token etc.)
-- NordVPN: allow aes-256-gcm for Openvpn 2.4
-- Private Internet Access: fix certificate validation (use OS certificates instead of custom certificate)
-- Port forwarding: loop exit from vpn loop
-- PUID and PGID as 32 bit unsigned integers instead of 16 bit
-
-###3.28.0
-###Features
-- Updater: environment variable UPDATER_VPN_SERVICE_PROVIDERS
-  - Updater defaults to update the VPN provider in use if enabled
-- ExpressVPN: update built-in server data
-- OPENVPN_PROCESS_USER with retro-compatibility with OPENVPN_ROOT
-- Add pprof HTTP server on port :6060 (#807)
-###Fixes
-- Accept uppercase OPENVPN_PROTOCOL values
-- Cyberghost: log about compatibility mode if COUNTRY is left empty
-- Control server: allow to bind on a random port by using :0
-- Retro-compatible precedence order for environment variables with defaults set in Dockerfile
-  - BLOCK_NSA has precedence over BLOCK_SURVEILLANCE
-  - HEALTH_OPENVPN_DURATION_ADDITION has precedence over HEALTH_VPN_DURATION_ADDITION
-  - HEALTH_OPENVPN_DURATION_INITIAL has precendence over HEALTH_VPN_DURATION_INITIAL
-  - Chain of precedence: PROXY > TINYPROXY > HTTPPROXY
-  - Chain of precedence: PROXY_LOG_LEVEL > TINYPROXY_LOG > HTTPPROXY_LOG
-  - PROTOCOL has precendence over OPENVPN_PROTOCOL
-  - IP_STATUS_FILE has precendence over PUBLICIP_FILE
-  - SHADOWSOCKS_PORT has precedence over SHADOWSOCKS_LISTENING_ADDRESS
-  - SHADOWSOCKS_METHOD has precedence over SHADOWSOCKS_CIPHER
-
-###3.27.0
-###Features
-- Wireguard opportunistic kernelspace
-  - Auto detect if kernelspace implementation is available
-  - Fallback to Go userspace implementation if kernel is not available
-- Entrypoint name changed from entrypoint to gluetun-entrypoint
-- Privado: update servers data
-- ProtonVPN: update servers data
-- Docker image: upgrade Alpine to 3.15
-###Fixes
--Hidemyass: REGION validation
--Dockerfile: change SHADOWSOCKS_ADDRESS to SHADOWSOCKS_LISTENING_ADDRESS
-
-###3.26.0
-###Features
-- Perfect privacy support (#606)
-- PrivateVPN
-  - OPENVPN_PORT support
-- Update server information
-  - Windscribe
-  - Torguard
-  - ProtonVPN
-  - NordVPN
-- Multiple OpenVPN ciphers for negotiation
-  - Cyberghost default cipher set to AES-256-GCM
-  - OPENVPN_CIPHER accept comma separated sipher values
-  - use ncp-ciphers for OpenVPN 2.4
-###Fixes
-- PrivateVPN: New OpenVPN configuration values
-- VyprVPN: Openvpn comp-lzo option
-- NordVPN: Openvpn comp-lzo option
-- Docker image: fix 2 low vulnerability busybox vulnerabilities
-- QNAP devices: openvpn at /usr/sbin/openvpn2.5 (see #157)
-- Updater: fix CLI error message
-- Version check: check Github http response status code
-- Public IP fetcher: remove opendns.com due to bad x509 cert
-- Storage: server data version diff when reading file
-
-###3.25.0
-###Features
-- ExpressVPN Support (#623)
-- WeVPN Support (#591)
-- Healthcheck uses DNS and ping to github.com instead of only DNS to avoid relying on DNS cache
-- HEALTH_ADDRESS_TO_PING variable
-- Adapt logger prefix to VPN used
-  - openvpn: for OpenVPN
-  - wireguard: for Wireguard
-- VPNSP value custom for OpenVPN custom config files (#621)
-- VPNSP value custom for Wireguard custom configuration
-  - WIREGUARD_PUBLIC_KEY variable
-  - WIREGUARD_ENDPOINT_IP variable
-- OpenVPN custom configuration file is reloaded on VPN restarts
-- OpenVPN custom configuration file is parsed at start to log out valid settings
-- Support IPv6 routing for Wireguard
-- Log Wireguard server endpoint
-- Log Wireguard keys when LOG_LEVEL=debug
-- Windscribe OpenVPN default cipher set to aes-256-gcm
-- Update server information built-in
-  - Cyberghost
-  - FastestVPN
-  - Mullvad
-- format-servers CLI command
-###Fixes
-- Set non block on TUN device
-- Close HTTP client connections when tunnel comes up
-- Public IP loop deadlock
-- OpenVPN VPNSP=custom does not deduplicate lines
-- PureVPN remove OpenVPN cipher option AES-256-CBC
-- Cyberghost OpenVPN cipher option defaults to aes-128-gcm
-- Repository servers.json path for maintainer server update cli
-- Add missing HTTP status code check for Windscribe API
-- PIA_ENCRYPTION default in Go program
-  - Defaults to strong instead of strong certificate string
-  - No impact on Docker images since variable is set to strong in Dockerfile
-  - Only read PIA_ENCRYPTION if service provider is PIA
-- (Security) Remove OpenVPN compression option (affects FastestVPN, Hide My Ass, IP Vanish, IVPN, NordVPN, PIA, PrivateVPN, ProtonVPN, Torguard, VPN Unlimited, VyprVPN)
-- FastestVPN updated OpenVPN configuration
-- HideMyAss: Cote d'Ivoire server country name
-- Log errors with error level for OpenVPN
-- PIA SERVER_NAME variable functionality
-
-###3.24.0
-###Features
-- IVPN
-  - Wireguard support (#584)
-  - TCP protocol support for OpenVPN
-  - Custom port support for OpenVPN
-  - Servers data update (#578)
-  - `ISP` filter (#578)
-- Mullvad
-  - `WIREGUARD_PORT` support
-- Surfshark
-  - Servers data improved (#575)
-- `LOG_LEVEL` variable (#577)
-- Add IP geolocation data to HTTP control server at `/v1/publicip/ip`
-- `OPENVPN_TARGET_IP` overrides IP for OpenVPN only
-- `WIREGUARD_ADDRESSES` accepts multiple comma separated IP networks
-###Fixes
-- `FIREWALL_OUTBOUND_SUBNETS` IP rules
-- Wireguard
-  - `FIREWALL_VPN_INPUT_PORTS` support
-  - Fixed cleanup of wireguard link that was preventing restarts
-- Surfshark `REGION` retro-compatibility restored
-- `MULTIHOP_ONLY` defaults to `no`
-- Fix panic for certain 'no server found' errors
-- Clear IP data when VPN is stopped
-    
-###v3.23.0
-- Support for Wireguard (IVPN, Mullvad and Windscribe)
-- Change ownership of OpenVPN configuration file with PUID and PGID
-- OpenVPN custom config process user gets removed
-- OpenVPN custom config with custom network interface name set properly in firewall
-- Sorted IP addresses for servers.json
-- Only allow traffic through VPN interface when needed
-- HTTP control server /v1/openvpn route interacts with OpenVPN settings only (not provider settings)
-- Image size lowered to 31MB
-- Using Alpine 3.14
-- Wireguard support
-
-###v3.22.0
-- Allow multiple comma separated values for CYBERGHOST_GROUP
-- Update Cyberghost servers information
-- Change from SHADOWSOCKS_PORT to SHADOWSOCKS_LISTENING_ADDRESS
-- Windscribe: only use OpenVPN IP addresses, not Wireguard ones
-- Cyberghost: explicit-exit-notify used only for UDP, not TCP
-- Fix loop state change logic deadlock (preventing a 2nd restart for all run loops)
-- Use latest apk-tools to fix an Alpine vulnerability
-- Upgrade qdm12/ss-server to v0.3.0
-  </Changes>
+###Previous Versions
+- See previous release notes here: https://github.com/qdm12/gluetun/releases
+    </Changes>
     <Config Name="TIMEZONE" Target="TZ" Default="" Mode="" Description="Specify a timezone to use to have correct log times. i.e. Europe/London" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="config" Target="/gluetun" Default="/mnt/user/appdata/gluetun" Mode="rw" Description="Container Path: /gluetun" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/gluetun</Config>
     <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="private internet access|airvpn|cyberghost|expressvpn|fastestvpn|hidemyass|ipvanish|ivpn|mullvad|nordvpn|perfect privacy|privado|privatevpn|protonvpn|purevpn|slickvpn|surfshark|torguard|vpnsecure|vpn unlimited|vyprvpn|wevpn|windscribe|custom" Mode="" Description="VPN Service Provider" Type="Variable" Display="always" Required="true" Mask="false">private internet access</Config>
@@ -892,21 +107,21 @@ services:
     <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="OPTINAL: 32 bytes pre-shared key in base64 format" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="Only for VPN_SERVICE_PROVIDER=custom and VPN_TYPE=wireguard: Wireguard server public key" Type="Variable" Display="always" Required="false" Mask="false"></Config>
     <Config Name="WIREGUARD_ADDRESSES" Target="WIREGUARD_ADDRESSES" Default="" Mode="" Description="Wireguard IP network in the format xx.xx.xx.xx/xx. Wireguard interface address, only required if VPN_TYPE=wireguard. Note this is usually specific by user and the same for all servers." Type="Variable" Display="always" Required="false" Mask="false"></Config>
-    <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN regions. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN countries. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN cities. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPTIONAL: (PIA ONLY) Single server hostname. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
-    <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="OPTIONAL: Comma separated list of server hostnames. https://github.com/qdm12/gluetun/wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="WIREGUARD_ALLOWED_IPS" Target="WIREGUARD_ALLOWED_IPS" Default="0.0.0.0/0,::/0" Mode="" Description="OPTIONAL: CSV of IP address ranges, only required if VPN_TYPE=wireguard. Note this is usually specific by user and the same for all servers." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WIREGUARD_MTU" Target="WIREGUARD_MTU" Default="1400" Mode="" Description="OPTIONAL: Any positive value up to 65535, only required if VPN_TYPE=wireguard." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Target="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="OPTIONAL: Wireguard persistent keepalive interval. i.e. 25s." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN countries. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="OPTIONAL: Comma separated list of VPN cities. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="OPTIONAL: (PIA ONLY) Single server hostname. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="OPTIONAL: Comma separated list of server hostnames. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING" Target="VPN_PORT_FORWARDING" Default="off|on" Mode="" Description="OPTIONAL: Enable custom port forwarding code for supported providers. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING_LISTENING_PORT" Target="VPN_PORT_FORWARDING_LISTENING_PORT" Default="" Mode="" Description="OPTIONAL: Port redirection for the VPN server side port forwarded. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="FIREWALL" Target="FIREWALL" Default="on|off" Mode="" Description="Turn on or off the container built-in firewall. You should turn off for debugging purposes only." Type="Variable" Display="always" Required="false" Mask="false">on</Config>
     <Config Name="FIREWALL_VPN_INPUT_PORTS" Target="FIREWALL_VPN_INPUT_PORTS" Default="" Mode="" Description="OPTIONAL: Comma separated list of ports to allow from the VPN server side (useful for vyprvpn port forwarding)" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="FIREWALL_INPUT_PORTS" Target="FIREWALL_INPUT_PORTS" Default="" Mode="" Description="OPTIONAL: Comma separated list of ports to allow through the default interface. This seems needed for Unraid containers and Kubernetes sidecars." Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="FIREWALL_OUTBOUND_SUBNETS" Target="FIREWALL_OUTBOUND_SUBNETS" Default="" Mode="" Description="OPTIONAL: You first need to set your LAN CIDR in FIREWALL_OUTBOUND_SUBNETS. For example with FIREWALL_OUTBOUND_SUBNETS=192.168.1.0/24" Type="Variable" Display="always" Required="false" Mask="false" />
     <Config Name="FIREWALL_DEBUG" Target="FIREWALL_DEBUG" Default="off|on" Mode="" Description="OPTIONAL: Prints every firewall related command. You should use it for debugging purposes only." Type="Variable" Display="always" Required="false" Mask="false">off</Config>
     <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="info" Mode="" Description="OPTIONAL: Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
-    <Config Name="HEALTH_SERVER_ADDRESS" Target="HEALTH_SERVER_ADDRESS" Default="127.0.0.1:9999" Mode="" Description="OPTIONAL: Internal Health Server Listening Addroess" Type="Variable" Display="advanced" Required="false" Mask="false">127.0.0.1:9999</Config>
-    <Config Name="HEALTH_TARGET_ADDRESS" Target="HEALTH_TARGET_ADDRESS" Default="cloudflare.com:443" Mode="" Description="OPTIONAL: Address used to check tunnel health" Type="Variable" Display="advanced" Required="false" Mask="false">cloudflare.com:443</Config>
-    <Config Name="HEALTH_VPN_DURATION_INITIAL" Target="HEALTH_VPN_DURATION_INITIAL" Default="6s" Mode="" Description="OPTIONAL: Initial health check duration in seconds." Type="Variable" Display="advanced" Required="false" Mask="false">6s</Config>
-    <Config Name="HEALTH_VPN_DURATION_ADDITION" Target="HEALTH_VPN_DURATION_ADDITION" Default="5s" Mode="" Description="OPTIONAL: Subsequent health check duration in seconds." Type="Variable" Display="advanced" Required="false" Mask="false">5s</Config>
     <Config Name="DOT" Target="DOT" Default="on|off" Mode="" Description="(Recommended: on) Activate DNS over TLS with Unbound" Type="Variable" Display="always" Required="false" Mask="false">on</Config>
     <Config Name="DOT_PROVIDERS" Target="DOT_PROVIDERS" Default="cloudflare|google|quad9|quadrant|cleanbrowsing" Mode="" Description="Comma delimited list of DNS over TLS providers" Type="Variable" Display="always" Required="false" Mask="false">cloudflare</Config>
     <Config Name="DOT_PRIVATE_ADDRESS" Target="DOT_PRIVATE_ADDRESS" Default="127.0.0.1/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,169.254.0.0/16,::1/128,fc00::/7,fe80::/10,::ffff:7f00:1/104,::ffff:a00:0/104,::ffff:a9fe:0/112,::ffff:ac10:0/108,::ffff:c0a8:0/112" Mode="" Description="All private CIDRs ranges. Comma separated list of CIDRs or single IP addresses Unbound won't resolve to. Note that the default setting prevents DNS rebinding" Type="Variable" Display="always" Required="false" Mask="false">127.0.0.1/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,169.254.0.0/16,::1/128,fc00::/7,fe80::/10,::ffff:7f00:1/104,::ffff:a00:0/104,::ffff:a9fe:0/112,::ffff:ac10:0/108,::ffff:c0a8:0/112</Config>
@@ -931,6 +146,17 @@ services:
     <Config Name="SHADOWSOCKS_PASSWORD" Target="SHADOWSOCKS_PASSWORD" Default="" Mode="" Description="OPTIONAL: Password to use to connect to Shadowsocks" Type="Variable" Display="always" Required="false" Mask="true" />
     <Config Name="SHADOWSOCKS_CIPHER" Target="SHADOWSOCKS_CIPHER" Default="chacha20-ietf-poly1305|aes-128-gcm|aes-256-gcm" Mode="" Description="OPTIONAL: Cipher to use for Shadowsocks" Type="Variable" Display="always" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
     <Config Name="UPDATER_PERIOD" Target="UPDATER_PERIOD" Default="0" Mode="" Description="OPTIONAL: Period to update all VPN servers information in memory and to /gluetun/servers.json. Set to 0 to disable. This does a burst of DNS over TLS requests, which may be blocked if you set BLOCK_MALICIOUS=on for example. Valid duration string such as 24h." Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+    <Config Name="PORT_FORWARD_ONLY" Target="PORT_FORWARD_ONLY" Default="off|on" Mode="" Description="OPTIONAL: Filter only port-forwarding enabled (aka *p2p*) servers (pia and protonvpn only)" Type="Variable" Display="advanced" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING_STATUS_FILE" Target="VPN_PORT_FORWARDING_STATUS_FILE" Default="/gluetun/forwarded_port" Mode="" Description="OPTIONAL: File path to use for writing the forwarded port obtained. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING_UP_COMMAND" Target="VPN_PORT_FORWARDING_UP_COMMAND" Default="" Mode="" Description="OPTIONAL: Command to run when port forwarding has finished setting up (pia and protonvpn only). https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING_DOWN_COMMAND" Target="VPN_PORT_FORWARDING_DOWN_COMMAND" Default="" Mode="" Description="OPTIONAL: Command to run when port forwarding has finished tearing down (pia and protonvpn only). https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING_PROVIDER" Target="VPN_PORT_FORWARDING_PROVIDER" Default="" Mode="" Description="OPTIONAL: Choose the custom port forwarding code to use. This is useful when using the custom provider with Wireguard. For PIA, make sure you set SERVER_NAMES=<server-name>. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING_USERNAME" Target="VPN_PORT_FORWARDING_USERNAME" Default="" Mode="" Description="OPTIONAL: This is needed when using the custom provider with Wireguard with PIA. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="false" />
+    <Config Name="VPN_PORT_FORWARDING_PASSWORD" Target="VPN_PORT_FORWARDING_PASSWORD" Default="" Mode="" Description="OPTIONAL: This is needed when using the custom provider with Wireguard with PIA. https://github.com/qdm12/gluetun-wiki" Type="Variable" Display="advanced" Required="false" Mask="true" />
+    <Config Name="HEALTH_SERVER_ADDRESS" Target="HEALTH_SERVER_ADDRESS" Default="127.0.0.1:9999" Mode="" Description="OPTIONAL: Internal Health Server Listening Addroess" Type="Variable" Display="advanced" Required="false" Mask="false">127.0.0.1:9999</Config>
+    <Config Name="HEALTH_TARGET_ADDRESS" Target="HEALTH_TARGET_ADDRESS" Default="cloudflare.com:443" Mode="" Description="OPTIONAL: Address used to check tunnel health" Type="Variable" Display="advanced" Required="false" Mask="false">cloudflare.com:443</Config>
+    <Config Name="HEALTH_VPN_DURATION_INITIAL" Target="HEALTH_VPN_DURATION_INITIAL" Default="6s" Mode="" Description="OPTIONAL: Initial health check duration in seconds." Type="Variable" Display="advanced" Required="false" Mask="false">6s</Config>
+    <Config Name="HEALTH_VPN_DURATION_ADDITION" Target="HEALTH_VPN_DURATION_ADDITION" Default="5s" Mode="" Description="OPTIONAL: Subsequent health check duration in seconds." Type="Variable" Display="advanced" Required="false" Mask="false">5s</Config>
     <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="/gluetun/ip" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/ip</Config>
     <Config Name="PUBLICIP_PERIOD" Target="PUBLICIP_PERIOD" Default="12h" Mode="" Description="OPTIONAL: Period to check for public IP address. Set to 0 to disable." Type="Variable" Display="advanced" Required="false" Mask="false">12h</Config>
     <Config Name="VERSION_INFORMATION" Target="VERSION_INFORMATION" Default="on|off" Mode="" Description="OPTIONAL: Filepath to store the public IP address assigned" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
