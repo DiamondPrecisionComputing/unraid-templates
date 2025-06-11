@@ -9,39 +9,34 @@
     <Project>https://github.com/qdm12/gluetun</Project>
     <License>https://img.shields.io/github/license/qdm12/gluetun</License>
     <Overview>
+# Gluetun VPN client
 Lightweight swiss-knife-like VPN client to multiple VPN service providers
 
-## Quick links
+# Quick links
 - Setup
   - https://github.com/qdm12/gluetun-wiki
-
 - Problem?
   - Check the Wiki: https://github.com/qdm12/gluetun-wiki
   - Start a discussion: https://github.com/qdm12/gluetun/discussions
   - Fix the Unraid template: https://github.com/qdm12/gluetun/discussions/550
-
 - Suggestion?
   - Create an issue: https://github.com/qdm12/gluetun/issues
   - Join the Slack channel: https://join.slack.com/t/qdm12/shared_invite/enQtOTE0NjcxNTM1ODc5LTYyZmVlOTM3MGI4ZWU0YmJkMjUxNmQ4ODQ2OTAwYzMxMTlhY2Q1MWQyOWUyNjc2ODliNjFjMDUxNWNmNzk5MDk
-
 - Happy?
   - Sponsor me: https://github.com/sponsors/qdm12
   - Donate: https://www.paypal.me/qmcgaw
   - Drop me an email: quentin.mcgaw@gmail.com
-
 - Want to add a VPN provider?
   - Check development: https://github.com/qdm12/gluetun-wiki/blob/main/contributing/development.md
   - Add a provider: https://github.com/qdm12/gluetun-wiki/blob/main/contributing/add-a-provider.md
-
-## Features
-
+# Features
 - Based on Alpine 3.18 for a small Docker image of 35.6MB
 - Supports: **AirVPN**, **Cyberghost**, **ExpressVPN**, **FastestVPN**, **Giganews**, **HideMyAss**, **IPVanish**, **IVPN**, **Mullvad**, **NordVPN**, **Perfect Privacy**, **Privado**, **Private Internet Access**, **PrivateVPN**, **ProtonVPN**, **PureVPN**, **SlickVPN**, **Surfshark**, **TorGuard**, **VPNSecure.me**, **VPNUnlimited**, **Vyprvpn**, **WeVPN**, **Windscribe** servers
 - Supports OpenVPN for all providers listed
 - Supports Wireguard both kernelspace and userspace
   - For **Mullvad**, **Ivpn**, **Surfshark** and **Windscribe**
   - For **ProtonVPN**, **PureVPN**, **Torguard**, **VPN Unlimited** and **WeVPN** using the custom provider
-  - For custom Wireguard configurations using [the custom provider
+  - For custom Wireguard configurations using the custom provider
   - More in progress, see: https://github.com/qdm12/gluetun/issues/134
 - DNS over TLS baked in with service provider(s) of your choice
 - DNS fine blocking of malicious/ads/surveillance hostnames and IP addresses, with live update every 24 hours
@@ -56,18 +51,13 @@ Lightweight swiss-knife-like VPN client to multiple VPN service providers
 - Possibility of split horizon DNS by selecting multiple DNS over TLS providers
 - Unbound subprogram drops root privileges once launched
 - Can work as a Kubernetes sidecar container, thanks @rorph
-
-## Setup
-
+# Setup
 🎉 There are now instructions specific to each VPN provider with examples to help you get started as quickly as possible!
 
 Go to the Wiki: https://github.com/qdm12/gluetun-wiki
-
 🆕 Image also available as `ghcr.io/qdm12/gluetun`
-
-## License
-
-[![MIT](https://img.shields.io/github/license/qdm12/gluetun)](https://github.com/qdm12/gluetun/master/LICENSE)
+# License
+MIT: https://github.com/qdm12/gluetun/master/LICENSE
    </Overview>
     <Category>Security: Network:VPN</Category>
     <WebUI>http://[IP]:[PORT:8000]</WebUI>
